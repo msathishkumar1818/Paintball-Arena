@@ -16,63 +16,37 @@
   }
 }
 
-/* Laptops & Compact Desktops (1025px - 1279px) */
+/* Tablet & Mobile Devices (<= 1279px - iPad Pro, Tablets & Mobile) */
+/* Header displays ONLY the brand logo and the Menu Button */
 @media (max-width: 1279px) {
-  .desktop-nav {
-    gap: 0.85rem;
-  }
-  
-  .nav-link {
-    font-size: 0.84rem;
-    padding: 0.35rem 0.5rem;
-  }
-
-  .header-actions {
-    gap: 0.5rem;
-  }
-
-  .header-actions .util-btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem;
-  }
-
-  .btn-login {
-    padding: 0.4rem 0.85rem;
-    font-size: 0.85rem;
-  }
-
-  .footer-grid {
-    gap: 2rem;
-  }
-}
-
-/* Tablet Landscape & Below (<= 1024px) - Clean Switch to Mobile Drawer */
-@media (max-width: 1024px) {
   :root {
     --header-height: 66px;
   }
 
+  /* Hide desktop navigation completely */
   .desktop-nav {
     display: none !important;
   }
 
+  /* Show mobile menu toggle button */
   .mobile-toggle-btn {
-    display: inline-flex;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
-  .header-actions .util-btn {
-    display: none; /* Accessible inside mobile drawer */
-  }
-
-  /* Hide Login button in header on mobile — it lives inside the drawer */
-  .btn-login-desktop {
+  /* In mobile/tablet header, ONLY the menu button should be visible (utilities live in the drawer) */
+  .header-actions .util-btn,
+  .header-actions .rtl-toggle-btn,
+  .header-actions .theme-toggle-btn,
+  .header-actions .btn-login-desktop {
     display: none !important;
   }
 
   /* Mobile drawer Login button styling */
   .mobile-login-wrap {
     padding: 0.75rem 1.25rem;
-    border-top: 1px solid rgba(255,255,255,0.07);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
     margin-top: 0.25rem;
   }
 
@@ -213,7 +187,7 @@
 /* ==========================================================================
    PAGE SECTION RESPONSIVE RULES (Tablets & Mobile)
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -327,19 +301,32 @@
 }
 
 /* Home 2 Tablet & Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .map-grid-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
+  .modes-section {
+    padding: 3.5rem 0;
+  }
+
   .scenario-card-block {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .scenario-card-block:last-child {
+    margin-bottom: 0 !important;
   }
 
   .scenario-card-block.reverse {
     direction: ltr;
+  }
+
+  .experience-section {
+    padding: 3rem 0;
   }
 
   .experience-mosaic-grid {
@@ -375,6 +362,23 @@
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+  }
+
+  .modes-section {
+    padding: 2.5rem 0;
+  }
+
+  .scenario-card-block {
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+  }
+
+  .scenario-card-block:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .experience-section {
+    padding: 2.25rem 0;
   }
 
   .mosaic-dual-images {
@@ -421,13 +425,30 @@
     padding: 0.4rem 0.85rem;
   }
 
+  .modes-section {
+    padding: 2rem 0;
+  }
+
+  .scenario-card-block {
+    margin-bottom: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .scenario-card-block:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .experience-section {
+    padding: 1.75rem 0;
+  }
+
   .experience-debrief-card {
     padding: 1.5rem 1.25rem;
   }
 }
 
 /* Book Session Tablet & Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .booking-hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -668,7 +689,7 @@
 }
 
 /* Packages & Pricing Tablet & Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .pkg-hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -776,7 +797,7 @@
 }
 
 /* Group & Corporate Events Tablet & Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .events-hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -821,7 +842,7 @@
 }
 
 /* Login & Dashboard Tablet & Mobile Adaptations */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .login-auth-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -868,7 +889,7 @@
 /* ==========================================================================
    CONTACT OPERATIONS RESPONSIVE ADAPTATIONS
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .contact-hero-grid,
   .logistics-grid {
     grid-template-columns: 1fr;
@@ -1587,7 +1608,7 @@
 }
 
 /* Battle Protocols & Deployment Layout Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .protocol-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.25rem !important;

@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Paintball Arena – Combat Ops Origin Story</title>
+  <meta name="description"
+    content="Learn the story behind Paintball Arena Combat Ops — from a single field to the region's premier tactical paintball destination. Meet our mission, values, and founding squad.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ============================================================
+       ABOUT PAGE — SCOPED STYLES (4 Unique Sections)
+       ============================================================ */
+
+    /* ── Section 1: Page Hero ── */
+    .about-hero {
+      position: relative;
+      padding: 3.5rem 0 2rem;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 70% 40%, rgba(95, 95, 243, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(94, 218, 98, 0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .about-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(94, 218, 98, 0.1);
+      border: 1px solid rgba(94, 218, 98, 0.3);
+      color: var(--color-green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-hero-eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-green);
+      animation: pdot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pdot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(.6)
+      }
+    }
+
+    .about-hero-heading {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-white);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-hero-desc {
+      font-size: 1.05rem;
+      color: rgba(245, 245, 245, 0.82);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .about-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .about-hero-media {
+      position: relative;
+    }
+
+    .about-hero-img-main {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      border: 1.5px solid rgba(95, 95, 243, 0.25);
+    }
+
+    .about-hero-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: linear-gradient(135deg, #1a1b24 0%, #25273a 100%);
+      border: 1.5px solid rgba(94, 218, 98, 0.35);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 220px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    html[dir="rtl"] .about-hero-badge {
+      left: auto;
+      right: -1.5rem;
+    }
+
+    .about-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(94, 218, 98, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .about-badge-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--color-green);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .about-badge-val {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--color-white);
+      line-height: 1;
+    }
+
+    .about-badge-label {
+      font-size: 0.72rem;
+      color: rgba(245, 245, 245, 0.65);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ── Section 2: Our Story ── */
+    .about-story {
+      padding: 3.5rem 0 2rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.35) 50%, transparent 100%);
+    }
+
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-story-img-stack {
+      position: relative;
+    }
+
+    .about-story-img-primary {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      border: 1.5px solid rgba(95, 95, 243, 0.2);
+    }
+
+    .about-story-img-secondary {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      width: 55%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2.5px solid #31333F;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    html[dir="rtl"] .about-story-img-secondary {
+      right: auto;
+      left: -2rem;
+    }
+
+    .about-story-year-tag {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: var(--color-green);
+      color: #0a0c10;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+    }
+
+    html[dir="rtl"] .about-story-year-tag {
+      left: auto;
+      right: 1.5rem;
+    }
+
+    .about-story-content {
+      padding-bottom: 2rem;
+    }
+
+    .about-story-heading {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-story-body {
+      font-size: 1rem;
+      color: rgba(245, 245, 245, 0.8);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+
+    .about-milestones {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 2px solid rgba(95, 95, 243, 0.3);
+      padding-left: 1.5rem;
+    }
+
+    html[dir="rtl"] .about-milestones {
+      border-left: none;
+      border-right: 2px solid rgba(95, 95, 243, 0.3);
+      padding-left: 0;
+      padding-right: 1.5rem;
+    }
+
+    .milestone-item {
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .milestone-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .milestone-item::before {
+      content: '';
+      position: absolute;
+      left: -1.86rem;
+      top: 0.3rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-purple);
+      border: 2px solid #31333F;
+    }
+
+    html[dir="rtl"] .milestone-item::before {
+      left: auto;
+      right: -1.86rem;
+    }
+
+    .milestone-year {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--color-green);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .milestone-desc {
+      font-size: 0.93rem;
+      color: rgba(245, 245, 245, 0.8);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* ── Section 3: Core Values Spotlight Cards + Marquee ── */
+    .s3 {
+      padding: 3rem 0 0;
+      overflow: hidden;
+    }
+
+    .s3-hdr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 2.5rem;
+    }
+
+    .s3-hdr-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-top: 0.75rem;
+    }
+
+    .s3-hdr-sub {
+      font-size: 1rem;
+      color: rgba(245, 245, 245, 0.68);
+      line-height: 1.75;
+      padding-bottom: 0.25rem;
+    }
+
+    .s3-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .s3-card {
+      position: relative;
+      background: linear-gradient(155deg, #1c1e2c 0%, #20223a 100%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 2.25rem 2rem 2rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: transform 0.35s cubic-bezier(.22, .68, 0, 1.2),
+        border-color 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .s3-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .s3-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .s3-card--green::before {
+      background: linear-gradient(90deg, var(--color-green), rgba(94, 218, 98, 0.3));
+    }
+
+    .s3-card--purple::before {
+      background: linear-gradient(90deg, var(--color-purple), rgba(95, 95, 243, 0.3));
+    }
+
+    .s3-card--green:hover {
+      border-color: rgba(94, 218, 98, 0.3);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(94, 218, 98, 0.15);
+    }
+
+    .s3-card--purple:hover {
+      border-color: rgba(95, 95, 243, 0.3);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(95, 95, 243, 0.15);
+    }
+
+    .s3-card-ghost {
+      position: absolute;
+      top: -0.5rem;
+      right: 1rem;
+      font-size: 7rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      color: rgba(255, 255, 255, 0.035);
+      pointer-events: none;
+      user-select: none;
+      transition: color 0.3s;
+    }
+
+    html[dir="rtl"] .s3-card-ghost {
+      right: auto;
+      left: 1rem;
+    }
+
+    .s3-card:hover .s3-card-ghost {
+      color: rgba(255, 255, 255, 0.06);
+    }
+
+    .s3-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .s3-card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(.22, .68, 0, 1.2);
+    }
+
+    .s3-card--green .s3-card-icon {
+      background: rgba(94, 218, 98, 0.12);
+      border: 1px solid rgba(94, 218, 98, 0.25);
+    }
+
+    .s3-card--purple .s3-card-icon {
+      background: rgba(95, 95, 243, 0.12);
+      border: 1px solid rgba(95, 95, 243, 0.25);
+    }
+
+    .s3-card:hover .s3-card-icon {
+      transform: scale(1.12) rotate(-6deg);
+    }
+
+    .s3-card-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .s3-card--green .s3-card-icon svg {
+      stroke: var(--color-green);
+    }
+
+    .s3-card--purple .s3-card-icon svg {
+      stroke: var(--color-purple);
+    }
+
+    .s3-card-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.65rem;
+      border-radius: 100px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .s3-card--green:hover .s3-card-tag {
+      color: var(--color-green);
+      border-color: rgba(94, 218, 98, 0.4);
+    }
+
+    .s3-card--purple:hover .s3-card-tag {
+      color: var(--color-purple);
+      border-color: rgba(95, 95, 243, 0.4);
+    }
+
+    .s3-card-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--color-white);
+      margin: 0 0 0.85rem;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .s3-card-desc {
+      font-size: 0.91rem;
+      color: rgba(245, 245, 245, 0.62);
+      line-height: 1.7;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .s3-card-foot {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .s3-card-stat {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--color-white);
+    }
+
+    .s3-card--green .s3-card-stat {
+      color: var(--color-green);
+    }
+
+    .s3-card--purple .s3-card-stat {
+      color: var(--color-purple);
+    }
+
+    .s3-card-stat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(245, 245, 245, 0.4);
+    }
+
+    /* ── Stats Marquee ── */
+    .s3-marquee-wrap {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      overflow: hidden;
+      padding: 1.15rem 0;
+      mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    .s3-marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+      animation: s3marquee 28s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes s3marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .s3-mq-item {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(245, 245, 245, 0.45);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0 2rem;
+    }
+
+    .s3-mq-item em {
+      font-style: normal;
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--color-white);
+      margin-right: 0.4rem;
+    }
+
+    .s3-mq-sep {
+      color: var(--color-green);
+      font-size: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Section 4: CTA Deploy ── */
+    .about-cta {
+      padding: 3.5rem 0 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(95, 95, 243, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-cta-inner {
+      position: relative;
+      background: linear-gradient(135deg, #1a1b24 0%, #1e2030 100%);
+      border: 1.5px solid rgba(95, 95, 243, 0.25);
+      border-radius: 24px;
+      padding: 3.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .about-cta-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(94, 218, 98, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-cta-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-green);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .about-cta-heading {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 900;
+      color: var(--color-white);
+      margin-bottom: 0.85rem;
+      line-height: 1.15;
+    }
+
+    .about-cta-desc {
+      font-size: 0.97rem;
+      color: rgba(245, 245, 245, 0.75);
+      line-height: 1.7;
+      max-width: 500px;
+    }
+
+    .about-cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      flex-shrink: 0;
+      min-width: 210px;
+    }
+
+    .about-cta-actions .btn-primary,
+    .about-cta-actions .btn-secondary {
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1025px) {
+
+      .about-hero-grid,
+      .about-story-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-hero-img-main {
+        height: 360px;
+      }
+
+      .about-hero-badge {
+        bottom: 1rem;
+        left: 1rem;
+      }
+
+      html[dir="rtl"] .about-hero-badge {
+        left: auto;
+        right: 1rem;
+      }
+
+      .about-story-img-secondary {
+        bottom: -1rem;
+        right: -1rem;
+      }
+
+      html[dir="rtl"] .about-story-img-secondary {
+        right: auto;
+        left: -1rem;
+      }
+
+      .s3-hdr {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+      }
+
+      .s3-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .s3-card:nth-child(3) {
+        grid-column: span 2;
+      }
+
+      .s3-card:nth-child(3) .s3-card-desc {
+        max-width: 520px;
+      }
+
+      .about-cta-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 2rem;
+      }
+
+      .about-cta-actions {
+        flex-direction: row;
+        min-width: unset;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        padding: 2.5rem 0 1.5rem;
+      }
+
+      .about-story {
+        padding: 2.5rem 0 1.5rem;
+      }
+
+      .about-story-img-primary {
+        height: 300px;
+      }
+
+      .about-story-img-secondary {
+        display: none;
+      }
+
+      .s3 {
+        padding-top: 2rem;
+      }
+
+      .s3-hdr {
+        margin-bottom: 1.75rem;
+      }
+
+      .s3-cards {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+        margin-bottom: 2rem;
+      }
+
+      .s3-card:nth-child(3) {
+        grid-column: span 1;
+      }
+
+      .s3-card {
+        padding: 1.75rem 1.5rem 1.5rem;
+      }
+
+      .s3-card-ghost {
+        font-size: 5.5rem;
+      }
+
+      .s3-card-title {
+        font-size: 1.15rem;
+      }
+
+      .about-cta {
+        padding: 2.5rem 0 3.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-hero-actions {
+        flex-direction: column;
+      }
+
+      .s3 {
+        padding-top: 1.5rem;
+      }
+
+      .s3-card {
+        padding: 1.5rem 1.25rem 1.25rem;
+        border-radius: 14px;
+      }
+
+      .s3-card-ghost {
+        font-size: 4.5rem;
+        top: 0;
+        right: 0.75rem;
+      }
+
+      .s3-card-stat {
+        font-size: 1.65rem;
+      }
+
+      .s3-mq-item {
+        padding: 0 1.25rem;
+        font-size: 0.75rem;
+      }
+
+      .about-cta-actions {
+        flex-direction: column;
+      }
+
+      .about-cta-inner {
+        padding: 2rem 1.25rem;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Tactical Logo" class="loader-logo">
+    </div>
+    <div class="loader-text"><span>Loading Mission Briefing</span></div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header" role="banner">
+    <div class="header-container">
+
+      <a href="index.html" class="header-brand" aria-label="Paintball Arena Home">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <div class="nav-item">
+          <button type="button" class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 (Tactical)</span><span class="dropdown-badge">HQ</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem">
+              <span>Home 2 (Cinematic)</span><span class="dropdown-badge">Warzone</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link active"><span>About</span></a></div>
+        <div class="nav-item"><a href="book-session.html" class="nav-link"><span>Book Session</span></a></div>
+        <div class="nav-item"><a href="packages.html" class="nav-link"><span>Packages</span></a></div>
+        <div class="nav-item"><a href="events.html" class="nav-link"><span>Group Events</span></a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link"><span>Contact</span></a></div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link"><span>Dashboard</span></a></div>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <svg viewBox="0 0 24 24">
+            <polyline points="8 4 4 8 8 12"></polyline>
+            <polyline points="16 20 20 16 16 12"></polyline>
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="20" y1="16" x2="4" y2="16"></line>
+          </svg>
+          <span class="rtl-text">RTL</span>
+        </button>
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span class="theme-text">Light</span>
+        </button>
+        <a href="login.html#login-terminal" class="btn-login btn-login-desktop" aria-label="Player Portal Login">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-menu-top">
+      <div class="mobile-brand">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-close-btn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li>
+        <button type="button" class="mobile-nav-link mobile-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-icon" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link"><span>Home 1 (Tactical HQ)</span><span
+              class="dropdown-badge">HQ</span></a>
+          <a href="home-2.html" class="mobile-sub-link"><span>Home 2 (Cinematic Warzone)</span><span
+              class="dropdown-badge">Warzone</span></a>
+        </div>
+      </li>
+      <li><a href="about.html" class="mobile-nav-link active"><span>About the Arena</span></a></li>
+      <li><a href="book-session.html" class="mobile-nav-link"><span>Book Session</span></a></li>
+      <li><a href="packages.html" class="mobile-nav-link"><span>Packages &amp; Pricing</span></a></li>
+      <li><a href="events.html" class="mobile-nav-link"><span>Group &amp; Corporate Events</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link"><span>Contact Operations</span></a></li>
+      <li><a href="dashboard.html" class="mobile-nav-link"><span>Dashboard</span></a></li>
+    </ul>
+    <div class="mobile-login-wrap">
+      <a href="login.html#login-terminal" class="btn-login mobile-login-btn" aria-label="Player Portal Login">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Login / Player Portal</span>
+      </a>
+    </div>
+    <div class="mobile-controls">
+      <div class="mobile-toggles-row">
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <span class="rtl-text">RTL</span>
+        </button>
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <span class="theme-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       MAIN CONTENT — 4 UNIQUE SECTIONS
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════
+         SECTION 1: ABOUT HERO
+         ══════════════════════════════════════════════════ -->
+    <section class="about-hero" aria-labelledby="about-hero-title">
+      <div class="site-container">
+        <div class="about-hero-grid">
+
+          <div class="about-hero-content">
+            <div class="about-hero-eyebrow">
+              <span class="dot"></span>
+              Since 2011 · Combat Ops
+            </div>
+            <h1 id="about-hero-title" class="about-hero-heading">
+              Built by Warriors.<br>
+              <span class="text-accent-green">Played</span> by Legends.
+            </h1>
+            <p class="about-hero-desc">
+              Paintball Arena started as a single 2-acre field and a dream to create the most immersive tactical combat
+              experience in the region. Today, we operate 14 acres of multi-terrain battlegrounds, serve 40,000+ players
+              annually, and host national-level tournaments that define the sport.
+            </p>
+            <div class="about-hero-actions">
+              <a href="book-session.html" class="btn-primary">
+                <span>Book Your Mission</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="contact.html" class="btn-secondary"><span>Contact Command</span></a>
+            </div>
+          </div>
+
+          <div class="about-hero-media">
+            <img src="assets/images/sections/p4.jpg"
+              alt="Paintball Arena players in full tactical gear charging through the battlefield"
+              class="about-hero-img-main">
+            <div class="about-hero-badge">
+              <div class="about-badge-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <div class="about-badge-val">4.9 ★</div>
+                <div class="about-badge-label">Rated #1 Arena · 2026</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+     SECTION 2: OUR STORY + TIMELINE
+     Layout redesigned only — content unchanged
+     ══════════════════════════════════════════════════ -->
+    <section class="about-story" aria-labelledby="about-story-title">
+      <div class="site-container">
+
+        <div class="about-story-grid">
+
+          <!-- STORY CONTENT -->
+          <div class="about-story-content">
+
+            <span class="section-eyebrow">The Origin Story</span>
+
+            <h2 id="about-story-title" class="about-story-heading">
+              From One Field to a <span class="text-accent-green">Tactical Empire</span>
+            </h2>
+
+            <p class="about-story-body">
+              In 2011, three ex-army veterans and two paintball obsessives pooled their savings to transform a plot of
+              land outside the metro into something the region had never seen — a real combat arena, not a muddy
+              backyard.
+            </p>
+
+
+
+            <!-- TIMELINE -->
+            <div class="about-milestones" aria-label="Arena milestone timeline">
+
+              <div class="milestone-item">
+                <div class="milestone-year">2011 — Launch</div>
+                <div class="milestone-desc">
+                  Opened with 2 acres, 3 zones, and 40 rental markers.
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-year">2015 — Expansion</div>
+                <div class="milestone-desc">
+                  Added speedball tournament grid and electronic hit scoring system.
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-year">2019 — Night Ops</div>
+                <div class="milestone-desc">
+                  Launched night operations with UV floodlights and thermal masks.
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-year">2023 — 14 Acres</div>
+                <div class="milestone-desc">
+                  Expanded to full 14-acre warzone with 6 distinct battlefield theaters.
+                </div>
+              </div>
+
+              <div class="milestone-item">
+                <div class="milestone-year">2026 — #1 Arena</div>
+                <div class="milestone-desc">
+                  Ranked region's top tactical paintball facility for the 3rd consecutive year.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- IMAGE COMPOSITION -->
+          <div class="about-story-img-stack">
+
+            <span class="about-story-year-tag">Est. 2011</span>
+
+            <img src="assets/images/sections/p17.jpg"
+              alt="Early Paintball Arena squad pre-game tactical briefing session" class="about-story-img-primary">
+
+            <img src="assets/images/sections/p18.jpg" alt="Paintball Arena modern entrance and command post exterior"
+              class="about-story-img-secondary">
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ══════════════════════════════════════════════════
+         SECTION 3: CORE VALUES — Spotlight Cards + Marquee
+         ══════════════════════════════════════════════════ -->
+    <section class="s3" aria-labelledby="s3-heading">
+      <div class="site-container">
+
+        <!-- HEADER -->
+        <div class="s3-hdr">
+          <div class="s3-hdr-left">
+            <span class="section-eyebrow">What Drives Us</span>
+            <h2 id="s3-heading" class="s3-hdr-title">
+              Our <span class="text-accent-green">Core Values</span>
+            </h2>
+          </div>
+          <p class="s3-hdr-sub">
+            Every match, every upgrade, every hire is guided by three non-negotiable principles —
+            and the numbers prove they work.
+          </p>
+        </div>
+
+        <!-- CARDS -->
+        <div class="s3-cards">
+
+          <!-- Card 1 -->
+          <article class="s3-card s3-card--green">
+            <span class="s3-card-ghost" aria-hidden="true">01</span>
+            <div class="s3-card-top">
+              <div class="s3-card-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <span class="s3-card-tag">Protocol 01</span>
+            </div>
+            <h3 class="s3-card-title">Safety Above All</h3>
+            <p class="s3-card-desc">
+              Every player is briefed, geared, and monitored by certified marshals.
+              Zero-compromise safety protocols mean zero injuries on our watch — ever.
+            </p>
+            <div class="s3-card-foot">
+              <span class="s3-card-stat">0</span>
+              <span class="s3-card-stat-label">Injuries on Record</span>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="s3-card s3-card--purple">
+            <span class="s3-card-ghost" aria-hidden="true">02</span>
+            <div class="s3-card-top">
+              <div class="s3-card-icon">
+                <svg viewBox="0 0 24 24">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <span class="s3-card-tag">Protocol 02</span>
+            </div>
+            <h3 class="s3-card-title">Maximum Intensity</h3>
+            <p class="s3-card-desc">
+              We engineer every zone, scenario, and event for maximum adrenaline —
+              from rapid-fire speedball to slow-burn tactical woodland ops with real stakes.
+            </p>
+            <div class="s3-card-foot">
+              <span class="s3-card-stat">6</span>
+              <span class="s3-card-stat-label">Combat Zones</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="s3-card s3-card--green">
+            <span class="s3-card-ghost" aria-hidden="true">03</span>
+            <div class="s3-card-top">
+              <div class="s3-card-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="s3-card-tag">Protocol 03</span>
+            </div>
+            <h3 class="s3-card-title">Squad Community</h3>
+            <p class="s3-card-desc">
+              Our arena is built by its players. Feedback drives every upgrade.
+              Regulars earn league rank. Every squad — from first-timers to veterans — matters here.
+            </p>
+            <div class="s3-card-foot">
+              <span class="s3-card-stat">40K+</span>
+              <span class="s3-card-stat-label">Players Per Year</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════
+         SECTION 4: CTA — DEPLOY NOW
+         ══════════════════════════════════════════════════ -->
+    <section class="about-cta" aria-labelledby="about-cta-title">
+      <div class="site-container">
+        <div class="about-cta-inner">
+
+          <div>
+            <div class="about-cta-eyebrow">Ready, Operator?</div>
+            <h2 id="about-cta-title" class="about-cta-heading">
+              Your Mission Starts Here.<br>
+              <span class="text-accent-green">Deploy Now.</span>
+            </h2>
+            <p class="about-cta-desc">
+              Whether you're a first-timer or a veteran squad leader, Paintball Arena has a slot, a zone,
+              and a mission waiting for you. Book online in under 2 minutes.
+            </p>
+          </div>
+
+          <div class="about-cta-actions">
+            <a href="book-session.html" class="btn-primary">
+              <span>Book Arena Slot</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="packages.html" class="btn-secondary"><span>View Packages</span></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/images/brand/logo.png" alt="Paintball Arena Official Logo" class="footer-logo-img">
+            <div>
+              <div class="footer-brand-title">Paintball Arena</div>
+              <div class="footer-brand-subtitle">Combat Ops</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Premier tactical combat arena featuring multi-terrain battlegrounds, electronic hit-scoring, competitive
+            speedball grids, and military-grade rental gear.
+          </p>
+          <div class="footer-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Arena Status: OPEN / Live Matches</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Combat Grid</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tactical HQ (Home 1)</a></li>
+            <li><a href="home-2.html">Warzone (Home 2)</a></li>
+            <li><a href="about.html">About the Arena</a></li>
+            <li><a href="packages.html">Armory &amp; Paint Packages</a></li>
+            <li><a href="events.html">Corporate &amp; Squad Battles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Player Services</div>
+          <ul class="footer-links-list">
+            <li><a href="book-session.html">Slot Reservations</a></li>
+            <li><a href="login.html">Player Dashboard Login</a></li>
+            <li><a href="contact.html">Dispatch &amp; Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Operations HQ</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Sector 7 Tactical Grounds, 452 Combat Way, Metro Arena District</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Mon - Sun: 08:00 AM - 11:00 PM (Night Ops)</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 555-PAINT (7246)</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 Paintball Arena Inc. All tactical rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Safety Terms</a>
+          <a href="#">Waiver Verification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -2453,7 +2453,7 @@ html[dir="rtl"] .intel-box.active {
    HOME 2 - SECTION 3: SCENARIO COMBAT MODES
    ========================================================================== */
 .modes-section {
-  padding: 6rem 0;
+  padding: 5rem 0 4rem;
   background-color: #292a34;
   border-bottom: 2px solid #3c3f4e;
 }
@@ -2468,7 +2468,11 @@ html.dark .modes-section {
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
   align-items: center;
-  margin-bottom: 4.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.scenario-card-block:last-child {
+  margin-bottom: 0;
 }
 
 .scenario-card-block.reverse {
@@ -2510,7 +2514,7 @@ html.dark .modes-section {
    HOME 2 - SECTION 4: THE OPERATOR EXPERIENCE (Split Mosaic)
    ========================================================================== */
 .experience-section {
-  padding: 6rem 0;
+  padding: 4.5rem 0;
   background-color: var(--bg-dark);
   border-bottom: 2px solid #3c3f4e;
 }
@@ -6603,8 +6607,61 @@ html.dark .login-card-title {
   max-width: 340px;
 }
 
-html.dark .login-card-subtitle {
-  color: #aeb2c6 !important;
+/* Auth Tab Switcher (Sign In / Register) */
+.login-tab-switch {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid #484b5c;
+  border-radius: 100px;
+  padding: 4px;
+  gap: 4px;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+html.dark .login-tab-switch {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: #282a3c;
+}
+
+.login-tab-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: #aeb2c6;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.login-tab-btn:hover {
+  color: #FFFFFF;
+}
+
+.login-tab-btn.active {
+  background: var(--color-green);
+  color: var(--color-dark-text) !important;
+  box-shadow: 0 4px 14px rgba(94, 218, 98, 0.35);
+}
+
+.login-tab-btn.active svg {
+  stroke: var(--color-dark-text);
+}
+
+.auth-pane {
+  width: 100%;
 }
 
 /* Form Container */

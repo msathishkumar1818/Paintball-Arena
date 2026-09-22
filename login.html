@@ -81,110 +81,298 @@
       </a>
 
       <!-- 2. Heading & Subtitle -->
-      <h1 class="login-card-title">Welcome back</h1>
-      <p class="login-card-subtitle">Enter your credentials to access your account dashboard</p>
+      <h1 class="login-card-title" id="login-title">Welcome back</h1>
+      <p class="login-card-subtitle" id="login-subtitle">Enter your credentials to access your account dashboard</p>
 
-      <!-- 3. Login Form -->
-      <form class="login-card-form"
-        onsubmit="event.preventDefault(); alert('Authentication Approved! Directing to Tactical Fleet Dashboard...'); window.location.href='dashboard.html';">
+      <!-- Auth Tab Switcher (Sign In / Register) -->
+      <div class="login-tab-switch" role="tablist" aria-label="Authentication Type">
+        <button type="button" class="login-tab-btn active" id="tab-login" role="tab" aria-selected="true"
+          aria-controls="pane-login" onclick="switchAuthTab('login')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Sign In</span>
+        </button>
+        <button type="button" class="login-tab-btn" id="tab-register" role="tab" aria-selected="false"
+          aria-controls="pane-register" onclick="switchAuthTab('register')">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+          </svg>
+          <span>Register</span>
+        </button>
+      </div>
 
-        <!-- Email Address Field -->
-        <div class="login-input-group">
-          <label for="login-email" class="login-card-label">Email Address</label>
-          <div class="login-pill-input-wrap">
-            <svg class="login-pill-icon" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <input type="email" id="login-email" class="login-pill-input" placeholder="name@example.com"
-              value="viper9@combatops.com" required autocomplete="email">
-          </div>
-        </div>
+      <!-- 3. Sign In Pane -->
+      <div id="pane-login" class="auth-pane" role="tabpanel" aria-labelledby="tab-login">
+        <form class="login-card-form"
+          onsubmit="event.preventDefault(); alert('Authentication Approved! Directing to Tactical Fleet Dashboard...'); window.location.href='dashboard.html';">
 
-        <!-- Password Field with Show/Hide Toggle -->
-        <div class="login-input-group">
-          <div class="login-label-flex">
-            <label for="login-password-field" class="login-card-label">Password</label>
-            <a href="#forgot" class="login-forgot-link" onclick="alert('Password reset link has been dispatched to your email.');">Forgot password?</a>
-          </div>
-          <div class="login-pill-input-wrap">
-            <svg class="login-pill-icon" viewBox="0 0 24 24">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            <input type="password" id="login-password-field" class="login-pill-input" placeholder="••••••••"
-              value="tacticalpass2026" required autocomplete="current-password">
-            <button type="button" class="login-pill-eye" aria-label="Toggle password visibility"
-              onclick="const p = document.getElementById('login-password-field'); p.type = p.type === 'password' ? 'text' : 'password';">
-              <svg viewBox="0 0 24 24">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
+          <!-- Email Address Field -->
+          <div class="login-input-group">
+            <label for="login-email" class="login-card-label">Email Address</label>
+            <div class="login-pill-input-wrap">
+              <svg class="login-pill-icon" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
+              <input type="email" id="login-email" class="login-pill-input" placeholder="name@example.com"
+                value="viper9@combatops.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Password Field with Show/Hide Toggle -->
+          <div class="login-input-group">
+            <div class="login-label-flex">
+              <label for="login-password-field" class="login-card-label">Password</label>
+              <a href="#forgot" class="login-forgot-link"
+                onclick="alert('Password reset link has been dispatched to your email.');">Forgot password?</a>
+            </div>
+            <div class="login-pill-input-wrap">
+              <svg class="login-pill-icon" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <input type="password" id="login-password-field" class="login-pill-input" placeholder="••••••••"
+                value="tacticalpass2026" required autocomplete="current-password">
+              <button type="button" class="login-pill-eye" aria-label="Toggle password visibility"
+                onclick="const p = document.getElementById('login-password-field'); p.type = p.type === 'password' ? 'text' : 'password';">
+                <svg viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div class="login-remember-flex">
+            <label class="login-checkbox-label">
+              <input type="checkbox" checked class="login-checkbox">
+              <span>Remember me for 30 days</span>
+            </label>
+          </div>
+
+          <!-- Sign In Submit Pill Button -->
+          <button type="submit" class="login-pill-submit-btn">
+            <span>Sign in</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+
+          <!-- Divider -->
+          <div class="login-card-divider">
+            <span>OR CONTINUE WITH</span>
+          </div>
+
+          <!-- Social Buttons Grid -->
+          <div class="login-social-grid">
+            <button type="button" class="login-social-pill"
+              onclick="alert('Google SSO Verified! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#4285F4"
+                  d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" />
+                <path fill="#34A853"
+                  d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" />
+                <path fill="#FBBC05"
+                  d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+                <path fill="#EA4335"
+                  d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+              </svg>
+              <span>Google</span>
+            </button>
+            <button type="button" class="login-social-pill"
+              onclick="alert('Apple ID Authenticated! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.85-.92.04-2.03.62-2.68 1.37-.58.66-1.09 1.73-1.04 2.76.99.08 2.03-.53 2.71-1.28z" />
+              </svg>
+              <span>Apple</span>
             </button>
           </div>
-        </div>
 
-        <!-- Remember Me Checkbox -->
-        <div class="login-remember-flex">
-          <label class="login-checkbox-label">
-            <input type="checkbox" checked class="login-checkbox">
-            <span>Remember me for 30 days</span>
-          </label>
-        </div>
+          <!-- Footer Switch Link -->
+          <div class="login-card-signup-row">
+            <span>Don't have an account?</span>
+            <a href="javascript:void(0)" class="login-signup-link" onclick="switchAuthTab('register')">Register now</a>
+          </div>
+        </form>
+      </div>
 
-        <!-- Sign In Submit Pill Button (Bright Lime / Neon Green) -->
-        <button type="submit" class="login-pill-submit-btn">
-          <span>Sign in</span>
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
+      <!-- 4. Register Pane -->
+      <div id="pane-register" class="auth-pane" role="tabpanel" aria-labelledby="tab-register" style="display: none;">
+        <form class="login-card-form"
+          onsubmit="event.preventDefault(); alert('Operator Registration Complete! Welcome to Paintball Arena.'); window.location.href='dashboard.html';">
 
-        <!-- Divider -->
-        <div class="login-card-divider">
-          <span>OR CONTINUE WITH</span>
-        </div>
+          <!-- Full Name Field -->
+          <div class="login-input-group">
+            <label for="reg-name" class="login-card-label">Operator Name / Call Sign</label>
+            <div class="login-pill-input-wrap">
+              <svg class="login-pill-icon" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input type="text" id="reg-name" class="login-pill-input" placeholder="e.g. Marcus Keller / Ghost"
+                required autocomplete="name">
+            </div>
+          </div>
 
-        <!-- Social Buttons Grid (Google & Apple) -->
-        <div class="login-social-grid">
-          <button type="button" class="login-social-pill"
-            onclick="alert('Google SSO Verified! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-              <path fill="#4285F4"
-                d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" />
-              <path fill="#34A853"
-                d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" />
-              <path fill="#FBBC05"
-                d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
-              <path fill="#EA4335"
-                d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+          <!-- Email Address Field -->
+          <div class="login-input-group">
+            <label for="reg-email" class="login-card-label">Email Address</label>
+            <div class="login-pill-input-wrap">
+              <svg class="login-pill-icon" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="email" id="reg-email" class="login-pill-input" placeholder="name@example.com" required
+                autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Phone Number Field -->
+          <div class="login-input-group">
+            <label for="reg-phone" class="login-card-label">Mobile Number</label>
+            <div class="login-pill-input-wrap">
+              <svg class="login-pill-icon" viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <input type="tel" id="reg-phone" class="login-pill-input" placeholder="+1 (555) 019-2834" required
+                autocomplete="tel">
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="login-input-group">
+            <label for="reg-password-field" class="login-card-label">Create Password</label>
+            <div class="login-pill-input-wrap">
+              <svg class="login-pill-icon" viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <input type="password" id="reg-password-field" class="login-pill-input"
+                placeholder="At least 8 characters" required autocomplete="new-password">
+              <button type="button" class="login-pill-eye" aria-label="Toggle password visibility"
+                onclick="const p = document.getElementById('reg-password-field'); p.type = p.type === 'password' ? 'text' : 'password';">
+                <svg viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Safety Waiver Checkbox -->
+          <div class="login-remember-flex">
+            <label class="login-checkbox-label">
+              <input type="checkbox" required class="login-checkbox">
+              <span>I agree to Arena Safety Protocols &amp; Terms</span>
+            </label>
+          </div>
+
+          <!-- Register Submit Pill Button -->
+          <button type="submit" class="login-pill-submit-btn">
+            <span>Create Operator Account</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span>Google</span>
           </button>
 
-          <button type="button" class="login-social-pill"
-            onclick="alert('Apple ID Authenticated! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path
-                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.85-.92.04-2.03.62-2.68 1.37-.58.66-1.09 1.73-1.04 2.76.99.08 2.03-.53 2.71-1.28z" />
-            </svg>
-            <span>Apple</span>
-          </button>
-        </div>
+          <!-- Divider -->
+          <div class="login-card-divider">
+            <span>OR REGISTER WITH</span>
+          </div>
 
-        <!-- Footer Sign Up Link -->
-        <div class="login-card-signup-row">
-          <span>Don't have an account?</span>
-          <a href="book-session.html" class="login-signup-link">Sign up</a>
-        </div>
+          <!-- Social Buttons Grid -->
+          <div class="login-social-grid">
+            <button type="button" class="login-social-pill"
+              onclick="alert('Google Registration Complete! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#4285F4"
+                  d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" />
+                <path fill="#34A853"
+                  d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" />
+                <path fill="#FBBC05"
+                  d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+                <path fill="#EA4335"
+                  d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+              </svg>
+              <span>Google</span>
+            </button>
+            <button type="button" class="login-social-pill"
+              onclick="alert('Apple Registration Complete! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.85-.92.04-2.03.62-2.68 1.37-.58.66-1.09 1.73-1.04 2.76.99.08 2.03-.53 2.71-1.28z" />
+              </svg>
+              <span>Apple</span>
+            </button>
+          </div>
 
-      </form>
+          <!-- Footer Switch Link -->
+          <div class="login-card-signup-row">
+            <span>Already have an account?</span>
+            <a href="javascript:void(0)" class="login-signup-link" onclick="switchAuthTab('login')">Sign in here</a>
+          </div>
+        </form>
+      </div>
 
     </div>
   </main>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    function switchAuthTab(tab) {
+      const isLogin = tab === 'login';
+      const paneLogin = document.getElementById('pane-login');
+      const paneRegister = document.getElementById('pane-register');
+      const tabLogin = document.getElementById('tab-login');
+      const tabRegister = document.getElementById('tab-register');
+      const title = document.getElementById('login-title');
+      const subtitle = document.getElementById('login-subtitle');
+
+      if (paneLogin && paneRegister) {
+        paneLogin.style.display = isLogin ? 'block' : 'none';
+        paneRegister.style.display = isLogin ? 'none' : 'block';
+      }
+
+      if (tabLogin && tabRegister) {
+        tabLogin.classList.toggle('active', isLogin);
+        tabLogin.setAttribute('aria-selected', isLogin ? 'true' : 'false');
+        tabRegister.classList.toggle('active', !isLogin);
+        tabRegister.setAttribute('aria-selected', isLogin ? 'false' : 'true');
+      }
+
+      if (title && subtitle) {
+        title.textContent = isLogin ? 'Welcome back' : 'Create Operator Account';
+        subtitle.textContent = isLogin
+          ? 'Enter your credentials to access your account dashboard'
+          : 'Join the premier tactical paintball combat community';
+      }
+
+      if (history.replaceState) {
+        history.replaceState(null, null, isLogin ? '#login' : '#register');
+      }
+    }
+
+    // Auto-select tab based on URL hash
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.location.hash === '#register') {
+        switchAuthTab('register');
+      }
+    });
+  </script>
 </body>
 
 </html>
