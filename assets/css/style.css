@@ -7305,9 +7305,9 @@ html[dir="rtl"] .dash-app-sidebar {
   display: none;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1.25rem;
+  padding: 0.85rem 0 0.85rem;
   border-bottom: 1.5px solid #282a36;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .dash-sidebar-close-btn {
@@ -7393,9 +7393,9 @@ html[dir="rtl"] .dash-app-sidebar {
   display: none;
   align-items: center;
   gap: 0.65rem;
-  margin-top: 1rem;
-  margin-bottom: 0.85rem;
-  padding-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.65rem;
+  padding-top: 0.75rem;
   border-top: 1.5px solid #282a36;
 }
 
