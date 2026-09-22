@@ -490,6 +490,81 @@
     grid-template-columns: 1fr;
   }
 
+  /* Package radio label: stack price below name on mobile */
+  .package-radio-label {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Fieldset title: wrap long Step headings cleanly */
+  .fieldset-title {
+    font-size: 1.05rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .fieldset-title span {
+    flex: 1 1 0;
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  /* Section header row: wrap on narrow screens */
+  .section-header-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Add-on checkbox label: wrap price to next line on mobile */
+  .addon-checkbox-label {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .addon-left {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .addon-price {
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  /* Summary ledger: allow values to wrap */
+  .summary-line-item {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .summary-line-item strong {
+    flex-shrink: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .summary-total-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Form fieldset card padding reduce */
+  .form-fieldset-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Summary sticky card padding reduce */
+  .summary-sticky-card {
+    padding: 1.25rem 1rem;
+  }
+
   .inclusions-spec-strip,
   .inclusions-tactical-grid {
     grid-template-columns: 1fr;
@@ -511,6 +586,84 @@
 
   .directives-cards-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile (<=480px) — Book Session Deep Fixes */
+@media (max-width: 480px) {
+  /* Slot buttons: 2 columns maintained but reduce padding */
+  .slot-btn {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .slot-time {
+    font-size: 0.95rem;
+  }
+
+  .slot-availability {
+    font-size: 0.68rem;
+  }
+
+  /* Fieldset title further reduce */
+  .fieldset-title {
+    font-size: 0.97rem;
+  }
+
+  /* Submit button: full width, no overflow */
+  .booking-form-main .btn-primary {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center;
+    font-size: 0.95rem !important;
+    padding: 0.9rem 1rem !important;
+    height: auto !important;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* Booking hero section image height */
+  .tactical-viewport img {
+    height: 220px !important;
+    object-fit: cover;
+  }
+
+  /* Customizer section padding */
+  .customizer-section {
+    padding: 3rem 0;
+  }
+
+  /* Summary total value */
+  .summary-total-val {
+    font-size: 2rem;
+  }
+
+  /* Date input full width */
+  .date-input-wrapper,
+  #booking-calendar-date,
+  .gateway-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Squad size select full width */
+  #book-squad-size {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Addon price always visible */
+  .addon-price {
+    font-size: 0.9rem;
+    min-width: 40px;
+  }
+
+  /* Summary line items: label on top, value below if needed */
+  .summary-line-item {
+    font-size: 0.88rem;
   }
 }
 
