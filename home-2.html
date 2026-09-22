@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintball Arena | Warzone Operations &amp; Combat Scenarios (Home 2)</title>
+  <meta name="description"
+    content="Cinematic paintball warzone theater. Tactical mission sectors, realistic scenario operations, operator squad packages, and real-time combat telemetry.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       BRANDED PAGE LOADER
+       ========================================================================== -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Tactical Logo" class="loader-logo">
+    </div>
+    <div class="loader-text">
+      <span>Initializing Warzone Systems</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FIXED COMPACT HEADER
+       ========================================================================== -->
+  <header id="site-header" role="banner">
+    <div class="header-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="header-brand" aria-label="Paintball Arena Home">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Exactly 6 Nav Items, Single Line) -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Dropdown: Click Only) -->
+        <div class="nav-item">
+          <button type="button" class="nav-link dropdown-trigger active" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 (Tactical HQ)</span>
+              <span class="dropdown-badge">HQ</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link active" role="menuitem">
+              <span>Home 2 (Cinematic Warzone)</span>
+              <span class="dropdown-badge">Warzone</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Book Session -->
+        <div class="nav-item">
+          <a href="book-session.html" class="nav-link">
+            <span>Book Session</span>
+          </a>
+        </div>
+
+        <!-- 3. Packages & Pricing -->
+        <div class="nav-item">
+          <a href="packages.html" class="nav-link">
+            <span>Packages</span>
+          </a>
+        </div>
+
+        <!-- 4. Group Events -->
+        <div class="nav-item">
+          <a href="events.html" class="nav-link">
+            <span>Group Events</span>
+          </a>
+        </div>
+
+        <!-- 5. Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- 6. Dashboard (Next to Contact) -->
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">
+            <span>Dashboard</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Header Utilities (RTL, Dark Mode, Login Button) -->
+      <div class="header-actions">
+        <!-- RTL / LTR Toggle -->
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <svg viewBox="0 0 24 24">
+            <polyline points="8 4 4 8 8 12"></polyline>
+            <polyline points="16 20 20 16 16 12"></polyline>
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="20" y1="16" x2="4" y2="16"></line>
+          </svg>
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span class="theme-text">Light</span>
+        </button>
+
+        <!-- Login Button (Direct entry to Login Terminal) - hidden on mobile, shown in drawer -->
+        <a href="login.html#login-terminal" class="btn-login btn-login-desktop" aria-label="Player Portal Login">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE MENU OVERLAY & DRAWER
+       ========================================================================== -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" aria-label="Mobile Navigation Drawer">
+    <!-- Mobile Drawer Header -->
+    <div class="mobile-menu-top">
+      <div class="mobile-brand">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-close-btn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items with Home Accordion -->
+    <ul class="mobile-nav-list">
+      <!-- 1. Home Accordion (Click only) -->
+      <li>
+        <button type="button" class="mobile-nav-link mobile-accordion-trigger active" aria-expanded="true">
+          <span>Home</span>
+          <svg class="nav-icon" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link">
+            <span>Home 1 (Tactical HQ)</span>
+            <span class="dropdown-badge">HQ</span>
+          </a>
+          <a href="home-2.html" class="mobile-sub-link active">
+            <span>Home 2 (Cinematic Warzone)</span>
+            <span class="dropdown-badge">Warzone</span>
+          </a>
+        </div>
+      </li>
+
+      <!-- 2. Book Session -->
+      <li>
+        <a href="book-session.html" class="mobile-nav-link">
+          <span>Book Session</span>
+        </a>
+      </li>
+
+      <!-- 3. Packages & Pricing -->
+      <li>
+        <a href="packages.html" class="mobile-nav-link">
+          <span>Packages &amp; Pricing</span>
+        </a>
+      </li>
+
+      <!-- 4. Group Events -->
+      <li>
+        <a href="events.html" class="mobile-nav-link">
+          <span>Group &amp; Corporate Events</span>
+        </a>
+      </li>
+
+      <!-- 5. Contact -->
+      <li>
+        <a href="contact.html" class="mobile-nav-link">
+          <span>Contact Operations</span>
+        </a>
+      </li>
+
+      <!-- 6. Dashboard -->
+      <li>
+        <a href="dashboard.html" class="mobile-nav-link">
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Mobile Login Button -->
+    <div class="mobile-login-wrap">
+      <a href="login.html#login-terminal" class="btn-login mobile-login-btn" aria-label="Player Portal Login">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Login / Player Portal</span>
+      </a>
+    </div>
+
+    <!-- Mobile Bottom Controls -->
+    <div class="mobile-controls">
+      <div class="mobile-toggles-row">
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <span class="rtl-text">RTL</span>
+        </button>
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <span class="theme-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       MAIN CONTENT (HOME 2 - EXACTLY 6 INTENTIONAL CONTENT SECTIONS)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: FULL-BLEED CINEMATIC WARZONE HERO -->
+    <section class="cinematic-hero" aria-labelledby="warzone-hero-title">
+      <div class="cinematic-hero-overlay"></div>
+      <div class="cinematic-hero-content">
+
+        <!-- Rotating HUD Reticle Scope -->
+        <div class="hud-reticle-badge animate-glow">
+          <svg class="hud-reticle-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="2" x2="12" y2="8"></line>
+            <line x1="12" y1="16" x2="12" y2="22"></line>
+            <line x1="2" y1="12" x2="8" y2="12"></line>
+            <line x1="16" y1="12" x2="22" y2="12"></line>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span
+            style="color: var(--color-green); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">
+            Operation: Nightfall Siege
+          </span>
+        </div>
+
+        <h1 id="warzone-hero-title" class="cinematic-heading">
+          Enter The <span class="text-accent-green">Warzone</span>. Rule The <span
+            class="text-accent-purple">Battleground</span>.
+        </h1>
+
+        <p class="cinematic-subtext">
+          High-intensity tactical warfare simulations with electronic hit scoring, military scenario objectives, and
+          specialized night combat grids.
+        </p>
+
+        <div style="display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;">
+          <a href="book-session.html" class="btn-primary">
+            <span>Enlist For Combat</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#warzone-map" class="btn-secondary">
+            <span>Explore Mission Map</span>
+          </a>
+        </div>
+
+        <!-- Live Operations Telemetry Ticker -->
+        <div class="warzone-ticker-bar">
+          <div class="ticker-item">
+            <span>Threat Level:</span>
+            <span class="ticker-val">DEFCON 2</span>
+          </div>
+          <div class="ticker-item">
+            <span>Active Sector:</span>
+            <span class="ticker-val">Grid Charlie-9</span>
+          </div>
+          <div class="ticker-item">
+            <span>Wind / Drift:</span>
+            <span class="ticker-val">4 Knots North</span>
+          </div>
+          <div class="ticker-item">
+            <span>Thermal Sensors:</span>
+            <span class="ticker-val">ONLINE</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: TACTICAL WARZONE INTERACTIVE MISSION MAP -->
+    <section id="warzone-map" class="map-section" aria-labelledby="map-title">
+      <div class="site-container">
+
+        <div class="section-header-row">
+          <div>
+            <span class="section-eyebrow">Strategic Reconnaissance</span>
+            <h2 id="map-title" class="section-title">Warzone Sector Command Map</h2>
+          </div>
+          <a href="book-session.html" class="btn-secondary">
+            <span>Reserve Custom Sector</span>
+          </a>
+        </div>
+
+        <div class="map-grid-layout">
+
+          <!-- Map Canvas Visual with Tactical Pins -->
+          <div class="map-canvas-card">
+            <img src="assets/images/sections/p9.jpg" alt="Aerial tactical view of Paintball Arena combat perimeter"
+              class="map-bg-img">
+
+            <!-- Sector Pins -->
+            <div class="sector-pin pin-1" title="Sector 1: Airfield Hangar">
+              <span class="pin-code">SEC-01</span>
+              <span class="pin-name">Airfield Hangar</span>
+            </div>
+
+            <div class="sector-pin pin-2" title="Sector 2: Fortified Bunker Hill">
+              <span class="pin-code">SEC-02</span>
+              <span class="pin-name">Bunker Hill</span>
+            </div>
+
+            <div class="sector-pin pin-3" title="Sector 3: Missile Silo Complex">
+              <span class="pin-code">SEC-03</span>
+              <span class="pin-name">Silo Complex</span>
+            </div>
+          </div>
+
+          <!-- Sector Operational Intel Panel -->
+          <div class="sector-intel-panel">
+
+            <div class="intel-box active hover-lift">
+              <div class="intel-title">Sector 01: Airfield Hangar Assault</div>
+              <p class="intel-desc">
+                High-speed open terrain surrounding decommissioned fuselage shelters. Features long engagement
+                sightlines and electronic smoke canisters for flanking maneuvers.
+              </p>
+            </div>
+
+            <div class="intel-box hover-lift">
+              <div class="intel-title">Sector 02: Fortified Bunker Hill</div>
+              <p class="intel-desc">
+                Elevated sandbag redoubts and multi-angle sniper bunkers. Demands coordinated suppressing fire and
+                squad-based smoke grenades to breach the perimeter.
+              </p>
+            </div>
+
+            <div class="intel-box hover-lift">
+              <div class="intel-title">Sector 03: Underground Silo CQB</div>
+              <p class="intel-desc">
+                Intense, low-light combat labyrinth featuring laser tripwires, blinking strobe illumination, and
+                claustrophobic corridors designed for tactical breaching.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: SCENARIO COMBAT GAME MODES (Asymmetric Split Blocks) -->
+    <section class="modes-section" aria-labelledby="modes-title">
+      <div class="site-container">
+
+        <div class="section-header-row">
+          <div>
+            <span class="section-eyebrow">Tactical Objectives</span>
+            <h2 id="modes-title" class="section-title">Specialized Scenario Missions</h2>
+          </div>
+          <a href="packages.html" class="btn-primary">
+            <span>View Scenario Upgrades</span>
+          </a>
+        </div>
+
+        <!-- Scenario 1: Downed Bird Extraction -->
+        <div class="scenario-card-block">
+          <div class="scenario-img-box tactical-viewport">
+            <img src="assets/images/sections/p10.jpg" alt="Paintball operators coordinating tactical extraction"
+              class="scenario-img">
+            <span class="scenario-badge">Mission Code: EXT-44</span>
+          </div>
+          <div>
+            <span class="section-eyebrow">Scenario Mode 01</span>
+            <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Downed Bird Perimeter Extraction</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: var(--color-soft-white); margin-bottom: 1.5rem;">
+              A squad of 8 VIP operators must defend a downed chopper in the center of the arena while an attacking
+              force of 12 enemy combatants advances from three convergent breach points.
+            </p>
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+              <div>
+                <span
+                  style="display: block; font-size: 0.75rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">Time
+                  Limit</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-white);">15 Minutes</span>
+              </div>
+              <div>
+                <span
+                  style="display: block; font-size: 0.75rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">Reinforcements</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-white);">1 Respawn Wave</span>
+              </div>
+              <div>
+                <span
+                  style="display: block; font-size: 0.75rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">Win
+                  Condition</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-purple);">Extract VIP To LZ</span>
+              </div>
+            </div>
+            <a href="book-session.html" class="btn-secondary">
+              <span>Book Extraction Mission</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scenario 2: Search & Destroy Detonator (Reversed) -->
+        <div class="scenario-card-block reverse">
+          <div class="scenario-img-box tactical-viewport">
+            <img src="assets/images/sections/p11.jpg" alt="Paintball squad storming concrete combat bunker"
+              class="scenario-img">
+            <span class="scenario-badge">Mission Code: SND-09</span>
+          </div>
+          <div>
+            <span class="section-eyebrow">Scenario Mode 02</span>
+            <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem;">Search &amp; Destroy Detonator Run</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6; color: var(--color-soft-white); margin-bottom: 1.5rem;">
+              One squad carries an electronic countdown device to plant inside the fortified factory base. Defenders
+              must eliminate the carrier or successfully disarm the 4-digit electronic terminal code.
+            </p>
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+              <div>
+                <span
+                  style="display: block; font-size: 0.75rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">Time
+                  Limit</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-white);">20 Minutes</span>
+              </div>
+              <div>
+                <span
+                  style="display: block; font-size: 0.75rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">Defusal
+                  Window</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-white);">45 Seconds</span>
+              </div>
+              <div>
+                <span
+                  style="display: block; font-size: 0.75rem; color: var(--color-green); font-weight: 700; text-transform: uppercase;">Difficulty</span>
+                <span style="font-weight: 800; font-size: 1.1rem; color: var(--color-green);">Veteran Squads</span>
+              </div>
+            </div>
+            <a href="book-session.html" class="btn-secondary">
+              <span>Book Detonator Run</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE OPERATOR EXPERIENCE (Dual Photo Mosaic + Debrief) -->
+    <section class="experience-section" aria-labelledby="experience-title">
+      <div class="site-container">
+
+        <div class="experience-mosaic-grid">
+
+          <!-- Dual Photos Mosaic -->
+          <div class="mosaic-dual-images">
+            <div class="mosaic-img-card hover-lift">
+              <img src="assets/images/gallery/p12.jpg"
+                alt="Close-up of paintball operator with mask and high-impact splatters">
+            </div>
+            <div class="mosaic-img-card hover-lift" style="margin-top: 2rem;">
+              <img src="assets/images/gallery/p13.jpg"
+                alt="Paintball team moving aggressively through tactical smoke screen">
+            </div>
+          </div>
+
+          <!-- Operator Debrief Card -->
+          <div class="experience-debrief-card">
+            <span class="section-eyebrow">Frontline Testimonials</span>
+            <h2 id="experience-title"
+              style="font-size: 2.25rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1.25rem;">
+              Raw Adrenaline. Pure Camaraderie.
+            </h2>
+            <p class="quote-lead">
+              "The adrenaline surge when the countdown horn blares and your squad breaches Sector 2 under cover of smoke
+              is unmatched. The electronic hit sensors completely eliminate arguing."
+            </p>
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+              <div
+                style="width: 48px; height: 48px; border-radius: 50%; background-color: var(--color-green); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--color-dark-text); font-size: 1.2rem;">
+                MK
+              </div>
+              <div>
+                <div class="quote-author">Marcus "Ghost" Keller</div>
+                <div class="quote-org">Squad Captain, Apex Predators CQB</div>
+              </div>
+            </div>
+
+            <!-- Experience Stats Counter -->
+            <div class="experience-stats-grid">
+              <div>
+                <span style="font-size: 1.75rem; font-weight: 900; color: var(--color-green);">45,000+</span>
+                <span
+                  style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--color-soft-white); text-transform: uppercase;">Matches
+                  Played</span>
+              </div>
+              <div>
+                <span style="font-size: 1.75rem; font-weight: 900; color: var(--color-purple);">100%</span>
+                <span
+                  style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--color-soft-white); text-transform: uppercase;">Safety
+                  Record</span>
+              </div>
+              <div>
+                <span style="font-size: 1.75rem; font-weight: 900; color: var(--color-white);">4.95 / 5</span>
+                <span
+                  style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--color-soft-white); text-transform: uppercase;">Player
+                  Satisfaction</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: DYNAMIC SQUAD PACKAGES MATRIX (Editorial Spec Matrix) -->
+    <section class="matrix-section" aria-labelledby="matrix-title">
+      <div class="site-container">
+
+        <div class="section-header-row"
+          style="text-align: center; justify-content: center; flex-direction: column; align-items: center;">
+          <span class="section-eyebrow">Deployment Loadouts</span>
+          <h2 id="matrix-title" class="section-title">Squad Combat Packages</h2>
+          <p style="font-size: 1.1rem; color: var(--color-soft-white); max-width: 600px; margin-top: 0.5rem;">
+            All-inclusive mission kits loaded with ammunition, high-velocity markers, protective armor, and dedicated
+            arena marshals.
+          </p>
+        </div>
+
+        <div class="matrix-grid">
+
+          <!-- Package 1: Recon Squad -->
+          <div class="matrix-tier-card hover-lift">
+            <div>
+              <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-white); text-transform: uppercase;">
+                Recon Cadet</h3>
+              <p style="font-size: 0.9rem; color: var(--color-soft-white); margin-top: 0.25rem;">Ideal for first-time
+                skirmishers and casual squads.</p>
+              <div class="tier-price-row">
+                <span class="tier-currency">$</span>
+                <span class="tier-amount">35</span>
+                <span class="tier-period">/ operator</span>
+              </div>
+              <ul class="tier-features">
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Semi-Automatic Mechanical Marker</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>300 High-Grade Field Paintballs</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Thermal Single-Lens Goggles</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>2 Hours Full Arena Access</span>
+                </li>
+              </ul>
+            </div>
+            <a href="book-session.html" class="btn-secondary" style="width: 100%; justify-content: center;">
+              <span>Enlist Cadet Tier</span>
+            </a>
+          </div>
+
+          <!-- Package 2: Assault Vanguard (Featured Green) -->
+          <div class="matrix-tier-card featured hover-lift">
+            <span class="tier-badge">Most Popular Choice</span>
+            <div>
+              <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-white); text-transform: uppercase;">
+                Assault Vanguard</h3>
+              <p style="font-size: 0.9rem; color: var(--color-soft-white); margin-top: 0.25rem;">Competition-grade
+                electronic firepower for intense squad battles.</p>
+              <div class="tier-price-row">
+                <span class="tier-currency">$</span>
+                <span class="tier-amount">59</span>
+                <span class="tier-period">/ operator</span>
+              </div>
+              <ul class="tier-features">
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Electro-Pneumatic Ramp Marker</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>750 Tournament-Grade Paintballs</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Dual-Pane Thermal Anti-Fog Mask</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>4-Pod Quick-Draw Battle Belt</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>3 Hours Access across All 3 Zones</span>
+                </li>
+              </ul>
+            </div>
+            <a href="book-session.html" class="btn-primary" style="width: 100%; justify-content: center;">
+              <span>Enlist Vanguard Tier</span>
+            </a>
+          </div>
+
+          <!-- Package 3: Spec-Ops Blackout -->
+          <div class="matrix-tier-card hover-lift">
+            <div>
+              <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-white); text-transform: uppercase;">
+                Spec-Ops Blackout</h3>
+              <p style="font-size: 0.9rem; color: var(--color-soft-white); margin-top: 0.25rem;">Elite VIP setup for
+                corporate skirmishes and tournament teams.</p>
+              <div class="tier-price-row">
+                <span class="tier-currency">$</span>
+                <span class="tier-amount">89</span>
+                <span class="tier-period">/ operator</span>
+              </div>
+              <ul class="tier-features">
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Custom Pro-Series Electronic Marker</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>1,200 Precision Paintballs + Smoke Grenade</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Full Body Tactical Armor &amp; Gloves</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Private Referee &amp; VIP Lounge Access</span>
+                </li>
+                <li class="tier-feature-line">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Unlimited Night Raid Access</span>
+                </li>
+              </ul>
+            </div>
+            <a href="book-session.html" class="btn-secondary" style="width: 100%; justify-content: center;">
+              <span>Enlist Spec-Ops Tier</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: TACTICAL SKIRMISH ENLISTMENT GATEWAY -->
+    <section class="gateway-section" aria-labelledby="gateway-title">
+      <div class="gateway-overlay"></div>
+      <div class="gateway-inner site-container">
+
+        <span class="section-eyebrow" style="color: var(--color-green);">Immediate Deployment</span>
+        <h2 id="gateway-title"
+          style="font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 900; text-transform: uppercase; color: var(--color-white); margin-bottom: 1rem;">
+          Lock In Your Squad Battle Slot
+        </h2>
+        <p style="font-size: 1.15rem; color: var(--color-soft-white); max-width: 640px; margin: 0 auto;">
+          Weekend slots fill rapidly. Select your preferred date, squad capacity, and target battle theater to lock in
+          guaranteed weapons and private arena access.
+        </p>
+
+        <!-- Fast Booking Form Strip -->
+        <form class="gateway-form-strip" action="book-session.html" method="get">
+          <div class="gateway-input-group">
+            <label class="gateway-label" for="gate-date">Combat Date</label>
+            <div class="date-input-wrapper">
+              <input type="date" id="gate-date" class="gateway-select" value="2026-09-25">
+              <svg class="calendar-white-icon" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+          </div>
+
+          <div class="gateway-input-group">
+            <label class="gateway-label" for="gate-squad">Squad Size</label>
+            <select id="gate-squad" class="gateway-select">
+              <option value="4-8">Squad (4 - 8 Players)</option>
+              <option value="9-16" selected>Platoon (9 - 16 Players)</option>
+              <option value="17-30">Company (17 - 30 Players)</option>
+              <option value="30+">Battalion (30+ Corporate)</option>
+            </select>
+          </div>
+
+          <div class="gateway-input-group">
+            <label class="gateway-label" for="gate-theater">Combat Theater</label>
+            <select id="gate-theater" class="gateway-select">
+              <option value="alpha">Zone Alpha (Speedball Grid)</option>
+              <option value="bravo" selected>Zone Bravo (Urban CQB Ruins)</option>
+              <option value="charlie">Zone Charlie (Jungle Outpost)</option>
+              <option value="all">All Sectors VIP Access</option>
+            </select>
+          </div>
+
+          <div style="display: flex; align-items: flex-end;">
+            <button type="submit" class="btn-primary" style="height: 48px; padding: 0 1.75rem; white-space: nowrap; width: 100%; justify-content: center;">
+              <span>Enlist Now</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER
+       ========================================================================== -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand & Status -->
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/images/brand/logo.png" alt="Paintball Arena Official Logo" class="footer-logo-img">
+            <div>
+              <div class="footer-brand-title">Paintball Arena</div>
+              <div class="footer-brand-subtitle">Combat Ops</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Premier tactical combat arena featuring multi-terrain battlegrounds, electronic hit-scoring, competitive
+            speedball grids, and military-grade rental gear.
+          </p>
+          <div class="footer-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Arena Status: OPEN / Live Matches</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Arena Navigation -->
+        <div>
+          <div class="footer-title">Combat Grid</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tactical HQ (Home 1)</a></li>
+            <li><a href="home-2.html">Warzone (Home 2)</a></li>
+            <li><a href="index.html#zones">Arena Battlefield Zones</a></li>
+            <li><a href="packages.html">Armory &amp; Paint Packages</a></li>
+            <li><a href="events.html">Corporate &amp; Squad Battles</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Player Services -->
+        <div>
+          <div class="footer-title">Player Services</div>
+          <ul class="footer-links-list">
+            <li><a href="book-session.html">Slot Reservations</a></li>
+            <li><a href="login.html">Player Dashboard Login</a></li>
+            <li><a href="#rules">Rules of Engagement</a></li>
+            <li><a href="#waiver">Digital Safety Waiver</a></li>
+            <li><a href="contact.html">Dispatch &amp; Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Operations & Dispatch HQ -->
+        <div>
+          <div class="footer-title">Operations HQ</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Sector 7 Tactical Grounds, 452 Combat Way, Metro Arena District</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Mon - Sun: 08:00 AM - 11:00 PM (Night Ops)</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 555-PAINT (7246)</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 Paintball Arena Inc. All tactical rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Safety Terms</a>
+          <a href="#">Waiver Verification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

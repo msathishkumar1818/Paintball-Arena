@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintball Arena | Group &amp; Corporate Events — Team Building &amp; Tournaments</title>
+  <meta name="description"
+    content="Host your next high-impact corporate team outing, birthday combat battle, or private arena buyout at Paintball Arena. Full catering, private pavilions, and dedicated marshals.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       BRANDED PAGE LOADER
+       ========================================================================== -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Tactical Logo" class="loader-logo">
+    </div>
+    <div class="loader-text">
+      <span>Initializing Corporate Operations</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FIXED COMPACT HEADER
+       ========================================================================== -->
+  <header id="site-header" role="banner">
+    <div class="header-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="header-brand" aria-label="Paintball Arena Home">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Exactly 6 Nav Items, Single Line) -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Dropdown: Click Only) -->
+        <div class="nav-item">
+          <button type="button" class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 (Tactical HQ)</span>
+              <span class="dropdown-badge">HQ</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem">
+              <span>Home 2 (Cinematic Warzone)</span>
+              <span class="dropdown-badge">Warzone</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Book Session -->
+        <div class="nav-item">
+          <a href="book-session.html" class="nav-link">
+            <span>Book Session</span>
+          </a>
+        </div>
+
+        <!-- 3. Packages & Pricing -->
+        <div class="nav-item">
+          <a href="packages.html" class="nav-link">
+            <span>Packages</span>
+          </a>
+        </div>
+
+        <!-- 4. Group Events (Active) -->
+        <div class="nav-item">
+          <a href="events.html" class="nav-link active">
+            <span>Group Events</span>
+          </a>
+        </div>
+
+        <!-- 5. Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- 6. Dashboard (Next to Contact) -->
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">
+            <span>Dashboard</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Header Utilities (RTL, Dark Mode, Login Button) -->
+      <div class="header-actions">
+        <!-- RTL / LTR Toggle -->
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <svg viewBox="0 0 24 24">
+            <polyline points="8 4 4 8 8 12"></polyline>
+            <polyline points="16 20 20 16 16 12"></polyline>
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="20" y1="16" x2="4" y2="16"></line>
+          </svg>
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span class="theme-text">Light</span>
+        </button>
+
+        <!-- Login Button (Direct entry to Login Terminal) - hidden on mobile, shown in drawer -->
+        <a href="login.html#login-terminal" class="btn-login btn-login-desktop" aria-label="Player Portal Login">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE MENU OVERLAY & DRAWER
+       ========================================================================== -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" aria-label="Mobile Navigation Drawer">
+    <!-- Mobile Drawer Header -->
+    <div class="mobile-menu-top">
+      <div class="mobile-brand">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-close-btn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items with Home Accordion -->
+    <ul class="mobile-nav-list">
+      <!-- 1. Home Accordion (Click only) -->
+      <li>
+        <button type="button" class="mobile-nav-link mobile-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-icon" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link">
+            <span>Home 1 (Tactical HQ)</span>
+            <span class="dropdown-badge">HQ</span>
+          </a>
+          <a href="home-2.html" class="mobile-sub-link">
+            <span>Home 2 (Cinematic Warzone)</span>
+            <span class="dropdown-badge">Warzone</span>
+          </a>
+        </div>
+      </li>
+
+      <!-- 2. Book Session -->
+      <li>
+        <a href="book-session.html" class="mobile-nav-link">
+          <span>Book Session</span>
+        </a>
+      </li>
+
+      <!-- 3. Packages & Pricing -->
+      <li>
+        <a href="packages.html" class="mobile-nav-link">
+          <span>Packages &amp; Pricing</span>
+        </a>
+      </li>
+
+      <!-- 4. Group Events (Active) -->
+      <li>
+        <a href="events.html" class="mobile-nav-link active">
+          <span>Group &amp; Corporate Events</span>
+        </a>
+      </li>
+
+      <!-- 5. Contact -->
+      <li>
+        <a href="contact.html" class="mobile-nav-link">
+          <span>Contact Operations</span>
+        </a>
+      </li>
+
+      <!-- 6. Dashboard -->
+      <li>
+        <a href="dashboard.html" class="mobile-nav-link">
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Mobile Login Button -->
+    <div class="mobile-login-wrap">
+      <a href="login.html#login-terminal" class="btn-login mobile-login-btn" aria-label="Player Portal Login">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Login / Player Portal</span>
+      </a>
+    </div>
+
+    <!-- Mobile Bottom Controls -->
+    <div class="mobile-controls">
+      <div class="mobile-toggles-row">
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <span class="rtl-text">RTL</span>
+        </button>
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <span class="theme-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       MAIN CONTENT (GROUP EVENTS - EXACTLY 5 CONTENT SECTIONS)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: CORPORATE & SQUAD WARFARE HERO -->
+    <section class="events-hero-section" aria-labelledby="events-hero-title">
+      <div class="site-container">
+        <div class="events-hero-grid">
+
+          <div>
+            <span class="section-eyebrow">Enterprise &amp; Large Squad Logistics</span>
+            <h1 id="events-hero-title"
+              style="font-size: clamp(2.3rem, 4.5vw, 3.8rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1.25rem;">
+              Tactical Team Building. High-Stakes Camaraderie.
+            </h1>
+            <p style="font-size: 1.15rem; line-height: 1.6; color: var(--color-soft-white); max-width: 620px;">
+              Break free from predictable corporate retreats. Immerse your teams in fast-paced tactical scenario battles
+              that demand instant communication, agile strategic pivots, and unwavering mutual support.
+            </p>
+
+            <div class="event-stats-strip">
+              <div class="event-stat-item">
+                <span class="event-stat-val">150+</span>
+                <span class="event-stat-label">Max Group Capacity</span>
+              </div>
+              <div class="event-stat-item">
+                <span class="event-stat-val">3 Zones</span>
+                <span class="event-stat-label">Multi-Terrain Arena</span>
+              </div>
+              <div class="event-stat-item">
+                <span class="event-stat-val">100%</span>
+                <span class="event-stat-label">Private Referees</span>
+              </div>
+              <div class="event-stat-item">
+                <span class="event-stat-val">Full BBQ</span>
+                <span class="event-stat-label">Catering Pavilions</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tactical-viewport">
+            <img src="assets/images/sections/p16.jpg"
+              alt="Large corporate team in tactical paintball gear posing united before match"
+              style="width: 100%; height: 380px; object-fit: cover;">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: EVENT FORMATS QUADRANT -->
+    <section class="formats-section" aria-labelledby="formats-title">
+      <div class="site-container">
+
+        <div class="section-header-row">
+          <div>
+            <span class="section-eyebrow">Operational Formats</span>
+            <h2 id="formats-title" class="section-title">Specialized Group Experiences</h2>
+          </div>
+          <a href="#rfq-console" class="btn-primary">
+            <span>Request Custom Proposal</span>
+          </a>
+        </div>
+
+        <div class="formats-quadrant-grid">
+
+          <!-- Format 1: Corporate Leadership Gauntlet -->
+          <div class="format-card hover-lift">
+            <img src="assets/images/sections/event-corporate.jpg"
+              alt="Corporate team paintball tactical leadership workshop" class="format-card-bg" loading="lazy"
+              width="800" height="540">
+            <div class="format-card-overlay"></div>
+            <div class="format-card-content">
+              <div>
+                <div class="format-head">
+                  <span class="format-capacity-tag">20 - 120 Operators</span>
+                  <span class="format-price-badge">$65<small> /op</small></span>
+                </div>
+                <h3 class="format-title">Corporate Leadership Gauntlet</h3>
+                <p class="format-desc">
+                  Custom objective-driven missions engineered for corporate departments. Rotational squad leader roles,
+                  objective debriefs, and strategic problem-solving.
+                </p>
+                <ul class="format-perks-list">
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Private Staging Tent with Whiteboards &amp; Power</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Dedicated Lead Marshal &amp; Tactical Coordinator</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>1,000 Paintballs per player + Upgraded Mask</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#rfq-console" class="btn-secondary format-cta-btn">
+                <span>Enquire Corporate Gauntlet</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Format 2: Bachelor & Birthday Combat Raid -->
+          <div class="format-card hover-lift">
+            <img src="assets/images/sections/event-bachelor.jpg"
+              alt="Bachelor and birthday party tactical paintball match with smoke canisters" class="format-card-bg"
+              loading="lazy" width="800" height="540">
+            <div class="format-card-overlay"></div>
+            <div class="format-card-content">
+              <div>
+                <div class="format-head">
+                  <span class="format-capacity-tag purple">10 - 30 Operators</span>
+                  <span class="format-price-badge white">$55<small> /op</small></span>
+                </div>
+                <h3 class="format-title">Bachelor &amp; Birthday Skirmish</h3>
+                <p class="format-desc">
+                  High-energy celebration battles featuring hilarious custom scenarios like "Protect The VIP" and "The
+                  Gauntlet Run", accompanied by smoke canisters.
+                </p>
+                <ul class="format-perks-list">
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Complimentary VIP High-Visibility Bunny Suit</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>4 Cold-Burning Colored Smoke Grenades</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Reserved Picnic Pavilion for Cake &amp; Drinks</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#rfq-console" class="btn-secondary format-cta-btn">
+                <span>Enquire Bachelor Party</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Format 3: Collegiate & Youth League -->
+          <div class="format-card hover-lift">
+            <img src="assets/images/sections/event-youth.jpg"
+              alt="Collegiate and youth league paintball tournament championship" class="format-card-bg" loading="lazy"
+              width="800" height="540">
+            <div class="format-card-overlay"></div>
+            <div class="format-card-content">
+              <div>
+                <div class="format-head">
+                  <span class="format-capacity-tag">25 - 80 Operators</span>
+                  <span class="format-price-badge">$42<small> /op</small></span>
+                </div>
+                <h3 class="format-title">Collegiate &amp; Youth Battle Cup</h3>
+                <p class="format-desc">
+                  Structured round-robin tournament for universities, sports clubs, and youth organizations. Low-impact
+                  .50 caliber options available for younger groups.
+                </p>
+                <ul class="format-perks-list">
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Optional Low-Impact .50 Caliber Soft Paint</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Electronic Tournament Bracket Display</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Champion Trophy &amp; Medals Included</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#rfq-console" class="btn-secondary format-cta-btn">
+                <span>Enquire Youth League</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Format 4: Complete Arena Buyout -->
+          <div class="format-card hover-lift" style="border-color: var(--color-green);">
+            <img src="assets/images/sections/event-lockdown.jpg"
+              alt="Complete arena lockdown private paintball facility twilight aerial view" class="format-card-bg"
+              loading="lazy" width="800" height="540">
+            <div class="format-card-overlay"></div>
+            <div class="format-card-content">
+              <div>
+                <div class="format-head">
+                  <span class="format-capacity-tag vip">Exclusive VIP</span>
+                  <span class="format-price-badge">Full Buyout</span>
+                </div>
+                <h3 class="format-title">Full 14-Acre Arena Lockdown</h3>
+                <p class="format-desc">
+                  Total exclusive access to all 3 battlefield zones for your entire organization. Zero public guests on
+                  site. Unlimited paint, catering, and DJ audio systems.
+                </p>
+                <ul class="format-perks-list">
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Exclusive Use of Zones Alpha, Bravo &amp; Charlie</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Unlimited Bulk Munition Cases for all attendees</span>
+                  </li>
+                  <li class="format-perk-line">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Full Pitmaster BBQ Buffet &amp; Refreshment Bar</span>
+                  </li>
+                </ul>
+              </div>
+              <a href="#rfq-console" class="btn-primary format-cta-btn">
+                <span>Reserve Exclusive Buyout</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: GROUP AMENITIES & PRIVATE STAGING BASE -->
+    <section class="amenities-section" aria-labelledby="amenities-title">
+      <div class="site-container">
+
+        <div class="section-header-row"
+          style="text-align: center; justify-content: center; flex-direction: column; align-items: center;">
+          <span class="section-eyebrow">Enterprise Comfort</span>
+          <h2 id="amenities-title" class="section-title">Dedicated Group Facilities</h2>
+          <p style="font-size: 1.1rem; color: var(--color-soft-white); max-width: 620px; margin-top: 0.5rem;">
+            From covered weather-proof staging pavilions to full-service pitmaster catering, we provide everything to
+            host unforgettable large-scale gatherings.
+          </p>
+        </div>
+
+        <div class="amenities-grid">
+
+          <div class="amenity-card hover-lift">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="amenity-title">Covered VIP Pavilions</h3>
+              <p class="amenity-desc">Weatherproof staging tents with picnic tables, cooling mist fans, phone charging
+                banks, and private gear staging.</p>
+            </div>
+          </div>
+
+          <div class="amenity-card hover-lift">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="amenity-title">Pitmaster BBQ Catering</h3>
+              <p class="amenity-desc">Freshly smoked pulled pork, grilled burgers, vegetarian platters, chilled
+                electrolyte beverages, and craft soda bars.</p>
+            </div>
+          </div>
+
+          <div class="amenity-card hover-lift">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="amenity-title">Electronic Bracket Screens</h3>
+              <p class="amenity-desc">Live-updated digital leaderboards projecting individual squad scores,
+                eliminations, and bracket progress across the pavilion.</p>
+            </div>
+          </div>
+
+          <div class="amenity-card hover-lift">
+            <div class="amenity-icon-box">
+              <svg viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <div>
+              <h3 class="amenity-title">Podium Ceremonies</h3>
+              <p class="amenity-desc">Custom engraved medals, champion trophies, and commemorative team photos taken by
+                our dedicated field photographer.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SECTION 4: DEDICATED RFQ CONSOLE -->
+    <section id="rfq-console" class="rfq-section" aria-labelledby="rfq-title">
+      <div class="site-container">
+
+        <div class="rfq-card-wrapper">
+          <div class="rfq-header-block">
+            <span class="section-eyebrow" style="color: var(--color-green);">Dedicated Event Concierge</span>
+            <h2 id="rfq-title" class="rfq-section-title">
+              Request An Event Proposal
+            </h2>
+            <p class="rfq-section-desc">
+              Submit your estimated squad headcount and preferred date. Our Event Operations Director will dispatch a
+              tailored itinerary and quote within 2 business hours.
+            </p>
+          </div>
+
+          <form class="rfq-form-grid"
+            onsubmit="event.preventDefault(); alert('Event Proposal Request Received! Our Operations Concierge will contact you within 2 hours.'); window.location.href='index.html';">
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-org-name">Company / Group Name</label>
+              <input type="text" id="rfq-org-name" class="rfq-input" placeholder="e.g. Apex Tech Corp" required>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-contact-name">Organizer Full Name</label>
+              <input type="text" id="rfq-contact-name" class="rfq-input" placeholder="e.g. Sarah Jenkins" required>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-email">Official Email Address</label>
+              <input type="email" id="rfq-email" class="rfq-input" placeholder="s.jenkins@apextech.com" required>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-phone">Phone / Mobile Dispatch</label>
+              <input type="tel" id="rfq-phone" class="rfq-input" placeholder="+1 (555) 019-2834" required>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-headcount">Estimated Headcount</label>
+              <select id="rfq-headcount" class="rfq-input">
+                <option value="15-25">Squad (15 - 25 Players)</option>
+                <option value="26-50" selected>Platoon (26 - 50 Players)</option>
+                <option value="51-100">Company (51 - 100 Players)</option>
+                <option value="100+">Battalion (100+ Full Arena Buyout)</option>
+              </select>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-event-type">Event Purpose</label>
+              <select id="rfq-event-type" class="rfq-input">
+                <option value="corporate" selected>Corporate Team Building Outing</option>
+                <option value="bachelor">Bachelor / Bachelorette Party</option>
+                <option value="birthday">Milestone Birthday Battle</option>
+                <option value="school">School / University Tournament</option>
+              </select>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-date">Target Combat Date</label>
+              <div class="date-input-wrapper">
+                <input type="date" id="rfq-date" class="rfq-input" value="2026-10-15" required>
+                <svg class="calendar-white-icon" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+            </div>
+
+            <div class="rfq-field-group">
+              <label class="gateway-label" for="rfq-catering">Catering Preference</label>
+              <select id="rfq-catering" class="rfq-input">
+                <option value="bbq" selected>Pitmaster BBQ Buffet &amp; Soft Drinks</option>
+                <option value="pizza">Artisan Pizza &amp; Wing Platters</option>
+                <option value="snacks">Hydration Station &amp; Energy Bars Only</option>
+                <option value="none">Self-Catered (Picnic Only)</option>
+              </select>
+            </div>
+
+            <div class="rfq-field-group full-span">
+              <label class="gateway-label" for="rfq-notes">Special Requests / Objective Customization</label>
+              <textarea id="rfq-notes" class="rfq-input" rows="3"
+                placeholder="Tell us about your team dynamics, preferred tournament rules, or scheduling constraints..."></textarea>
+            </div>
+
+            <div class="rfq-field-group full-span">
+              <button type="submit" class="btn-primary rfq-submit-btn">
+                <span>Dispatch Event Proposal Request</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER
+       ========================================================================== -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand & Status -->
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/images/brand/logo.png" alt="Paintball Arena Official Logo" class="footer-logo-img">
+            <div>
+              <div class="footer-brand-title">Paintball Arena</div>
+              <div class="footer-brand-subtitle">Combat Ops</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Premier tactical combat arena featuring multi-terrain battlegrounds, electronic hit-scoring, competitive
+            speedball grids, and military-grade rental gear.
+          </p>
+          <div class="footer-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Arena Status: OPEN / Live Matches</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Arena Navigation -->
+        <div>
+          <div class="footer-title">Combat Grid</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tactical HQ (Home 1)</a></li>
+            <li><a href="home-2.html">Warzone (Home 2)</a></li>
+            <li><a href="index.html#zones">Arena Battlefield Zones</a></li>
+            <li><a href="packages.html">Armory &amp; Paint Packages</a></li>
+            <li><a href="events.html">Corporate &amp; Squad Battles</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Player Services -->
+        <div>
+          <div class="footer-title">Player Services</div>
+          <ul class="footer-links-list">
+            <li><a href="book-session.html">Slot Reservations</a></li>
+            <li><a href="login.html">Player Dashboard Login</a></li>
+            <li><a href="#rules">Rules of Engagement</a></li>
+            <li><a href="#waiver">Digital Safety Waiver</a></li>
+            <li><a href="contact.html">Dispatch &amp; Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Operations & Dispatch HQ -->
+        <div>
+          <div class="footer-title">Operations HQ</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Sector 7 Tactical Grounds, 452 Combat Way, Metro Arena District</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Mon - Sun: 08:00 AM - 11:00 PM (Night Ops)</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 555-PAINT (7246)</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 Paintball Arena Inc. All tactical rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Safety Terms</a>
+          <a href="#">Waiver Verification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

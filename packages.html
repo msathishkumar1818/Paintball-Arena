@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintball Arena | Packages &amp; Pricing — Armory Loadouts &amp; Ammo Crates</title>
+  <meta name="description"
+    content="Transparent tactical packages, military-spec hardware tiers, bulk ammunition crate discounts, and VIP clan annual passes at Paintball Arena.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       BRANDED PAGE LOADER
+       ========================================================================== -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Tactical Logo" class="loader-logo">
+    </div>
+    <div class="loader-text">
+      <span>Accessing Armory Manifest</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FIXED COMPACT HEADER
+       ========================================================================== -->
+  <header id="site-header" role="banner">
+    <div class="header-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="header-brand" aria-label="Paintball Arena Home">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Exactly 6 Nav Items, Single Line) -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Dropdown: Click Only) -->
+        <div class="nav-item">
+          <button type="button" class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 (Tactical HQ)</span>
+              <span class="dropdown-badge">HQ</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem">
+              <span>Home 2 (Cinematic Warzone)</span>
+              <span class="dropdown-badge">Warzone</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Book Session -->
+        <div class="nav-item">
+          <a href="book-session.html" class="nav-link">
+            <span>Book Session</span>
+          </a>
+        </div>
+
+        <!-- 3. Packages & Pricing (Active) -->
+        <div class="nav-item">
+          <a href="packages.html" class="nav-link active">
+            <span>Packages</span>
+          </a>
+        </div>
+
+        <!-- 4. Group Events -->
+        <div class="nav-item">
+          <a href="events.html" class="nav-link">
+            <span>Group Events</span>
+          </a>
+        </div>
+
+        <!-- 5. Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- 6. Dashboard (Next to Contact) -->
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">
+            <span>Dashboard</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Header Utilities (RTL, Dark Mode, Login Button) -->
+      <div class="header-actions">
+        <!-- RTL / LTR Toggle -->
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <svg viewBox="0 0 24 24">
+            <polyline points="8 4 4 8 8 12"></polyline>
+            <polyline points="16 20 20 16 16 12"></polyline>
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="20" y1="16" x2="4" y2="16"></line>
+          </svg>
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span class="theme-text">Light</span>
+        </button>
+
+        <!-- Login Button (Direct entry to Login Terminal) - hidden on mobile, shown in drawer -->
+        <a href="login.html#login-terminal" class="btn-login btn-login-desktop" aria-label="Player Portal Login">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE MENU OVERLAY & DRAWER
+       ========================================================================== -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" aria-label="Mobile Navigation Drawer">
+    <!-- Mobile Drawer Header -->
+    <div class="mobile-menu-top">
+      <div class="mobile-brand">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-close-btn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items with Home Accordion -->
+    <ul class="mobile-nav-list">
+      <!-- 1. Home Accordion (Click only) -->
+      <li>
+        <button type="button" class="mobile-nav-link mobile-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-icon" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link">
+            <span>Home 1 (Tactical HQ)</span>
+            <span class="dropdown-badge">HQ</span>
+          </a>
+          <a href="home-2.html" class="mobile-sub-link">
+            <span>Home 2 (Cinematic Warzone)</span>
+            <span class="dropdown-badge">Warzone</span>
+          </a>
+        </div>
+      </li>
+
+      <!-- 2. Book Session -->
+      <li>
+        <a href="book-session.html" class="mobile-nav-link">
+          <span>Book Session</span>
+        </a>
+      </li>
+
+      <!-- 3. Packages & Pricing (Active) -->
+      <li>
+        <a href="packages.html" class="mobile-nav-link active">
+          <span>Packages &amp; Pricing</span>
+        </a>
+      </li>
+
+      <!-- 4. Group Events -->
+      <li>
+        <a href="events.html" class="mobile-nav-link">
+          <span>Group &amp; Corporate Events</span>
+        </a>
+      </li>
+
+      <!-- 5. Contact -->
+      <li>
+        <a href="contact.html" class="mobile-nav-link">
+          <span>Contact Operations</span>
+        </a>
+      </li>
+
+      <!-- 6. Dashboard -->
+      <li>
+        <a href="dashboard.html" class="mobile-nav-link">
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Mobile Login Button -->
+    <div class="mobile-login-wrap">
+      <a href="login.html#login-terminal" class="btn-login mobile-login-btn" aria-label="Player Portal Login">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Login / Player Portal</span>
+      </a>
+    </div>
+
+    <!-- Mobile Bottom Controls -->
+    <div class="mobile-controls">
+      <div class="mobile-toggles-row">
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <span class="rtl-text">RTL</span>
+        </button>
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <span class="theme-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       MAIN CONTENT (PACKAGES & PRICING - EXACTLY 5 CONTENT SECTIONS)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: ARMORY CATALOG HERO -->
+    <section class="pkg-hero-section" aria-labelledby="pkg-hero-title">
+      <div class="site-container">
+        <div class="pkg-hero-grid">
+
+          <div>
+            <span class="section-eyebrow">Arsenal Logistics &amp; Tiers</span>
+            <h1 id="pkg-hero-title"
+              style="font-size: clamp(2.3rem, 4.5vw, 3.8rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1.25rem;">
+              Tactical Loadouts &amp; Field Hardware
+            </h1>
+            <p style="font-size: 1.15rem; line-height: 1.6; color: var(--color-soft-white); max-width: 600px;">
+              Engineered for every combat tier. Transparent pricing with zero hidden gear fees. Choose between
+              mechanical workhorses and electro-pneumatic ramp tournament beasts.
+            </p>
+
+            <div class="filter-pills-row">
+              <span class="filter-pill active">All Tactical Tiers</span>
+              <span class="filter-pill">Recreational Squads</span>
+              <span class="filter-pill">Tournament Ramp</span>
+              <span class="filter-pill">VIP Night Raid</span>
+            </div>
+          </div>
+
+          <div class="tactical-viewport">
+            <img src="assets/images/sections/p15.jpg"
+              alt="Military paintball gear workbench with electronic markers and masks"
+              style="width: 100%; height: 380px; object-fit: cover;">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ARMORY TIERS SHOWCASE (Wide Editorial Spec Rows) -->
+    <section class="armory-tiers-showcase" aria-labelledby="tiers-showcase-title">
+      <div class="site-container">
+
+        <div class="section-header-row">
+          <div>
+            <span class="section-eyebrow">Official Tier Manifest</span>
+            <h2 id="tiers-showcase-title" class="section-title">Select Your Operational Loadout</h2>
+          </div>
+          <a href="book-session.html" class="btn-primary">
+            <span>Direct Session Booking</span>
+          </a>
+        </div>
+
+        <!-- Tier 1: Cadet Recon Kit -->
+        <article class="tier-wide-card hover-lift">
+          <div class="tier-col-left">
+            <span class="tier-category-badge">Entry Combat Tier</span>
+            <h3 class="tier-name-title">Cadet Recon Kit</h3>
+            <div class="tier-big-price">$35<small
+                style="font-size: 1rem; color: var(--color-soft-white); font-weight: 700;"> /op</small></div>
+            <span style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.35rem;">2 Hours Field
+              Access</span>
+          </div>
+
+          <div class="tier-col-specs">
+            <div class="spec-tile">
+              <span class="spec-tile-label">Marker Spec</span>
+              <span class="spec-tile-value">Semi-Auto Mechanical (280 FPS)</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Ammunition</span>
+              <span class="spec-tile-value">300 Bio-Paintballs</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Optics / Mask</span>
+              <span class="spec-tile-value">ASTM Anti-Fog Single Lens</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Air Supply</span>
+              <span class="spec-tile-value">Unlimited 3,000 PSI HPA</span>
+            </div>
+          </div>
+
+          <div class="tier-col-action">
+            <a href="book-session.html" class="btn-secondary" style="justify-content: center;">
+              <span>Deploy Cadet</span>
+            </a>
+            <span style="text-align: center; font-size: 0.75rem; color: var(--color-soft-white); font-weight: 700;">No
+              minimum squad size</span>
+          </div>
+        </article>
+
+        <!-- Tier 2: Assault Vanguard Kit (Featured Green) -->
+        <article class="tier-wide-card featured hover-lift">
+          <div class="tier-col-left">
+            <span class="tier-category-badge" style="color: var(--color-green);">Recommended Battle Kit</span>
+            <h3 class="tier-name-title">Assault Vanguard</h3>
+            <div class="tier-big-price">$59<small
+                style="font-size: 1rem; color: var(--color-soft-white); font-weight: 700;"> /op</small></div>
+            <span style="font-size: 0.8rem; color: var(--color-green); font-weight: 700; margin-top: 0.35rem;">3 Hours
+              Access (All Zones)</span>
+          </div>
+
+          <div class="tier-col-specs">
+            <div class="spec-tile">
+              <span class="spec-tile-label">Marker Spec</span>
+              <span class="spec-tile-value" style="color: var(--color-green);">Electro-Pneumatic Ramp Trigger</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Ammunition</span>
+              <span class="spec-tile-value">750 Tournament Paintballs</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Optics / Mask</span>
+              <span class="spec-tile-value">Dual-Pane Thermal Spherical</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Rigging</span>
+              <span class="spec-tile-value">4-Pod Fast-Draw Battle Belt</span>
+            </div>
+          </div>
+
+          <div class="tier-col-action">
+            <a href="book-session.html" class="btn-primary" style="justify-content: center;">
+              <span>Deploy Vanguard</span>
+            </a>
+            <span style="text-align: center; font-size: 0.75rem; color: var(--color-green); font-weight: 800;">Most
+              Popular Loadout</span>
+          </div>
+        </article>
+
+        <!-- Tier 3: Spec-Ops Blackout Kit -->
+        <article class="tier-wide-card hover-lift">
+          <div class="tier-col-left">
+            <span class="tier-category-badge" style="color: var(--color-purple);">Elite Tactical Grade</span>
+            <h3 class="tier-name-title">Spec-Ops Blackout</h3>
+            <div class="tier-big-price">$89<small
+                style="font-size: 1rem; color: var(--color-soft-white); font-weight: 700;"> /op</small></div>
+            <span style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.35rem;">Full Day VIP Pass +
+              Lounge</span>
+          </div>
+
+          <div class="tier-col-specs">
+            <div class="spec-tile">
+              <span class="spec-tile-label">Marker Spec</span>
+              <span class="spec-tile-value">Custom OLED Competition Beast</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Ammunition</span>
+              <span class="spec-tile-value">1,200 Precision Rounds + Smoke</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Optics / Mask</span>
+              <span class="spec-tile-value">Thermal Pro + Comms Radio</span>
+            </div>
+            <div class="spec-tile">
+              <span class="spec-tile-label">Tactical Support</span>
+              <span class="spec-tile-value">Private Referee &amp; VIP Spawn Base</span>
+            </div>
+          </div>
+
+          <div class="tier-col-action">
+            <a href="book-session.html" class="btn-secondary" style="justify-content: center;">
+              <span>Deploy Spec-Ops</span>
+            </a>
+            <span
+              style="text-align: center; font-size: 0.75rem; color: var(--color-soft-white); font-weight: 700;">Includes
+              Night Raid Access</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: BULK AMMUNITION & PAINTBALL CRATES -->
+    <section class="ammo-section" aria-labelledby="ammo-title">
+      <div class="site-container">
+        <div class="ammo-split-layout">
+
+          <div>
+            <span class="section-eyebrow">Munitions Logistics</span>
+            <h2 id="ammo-title" class="section-title">Bulk Field Paintball Crates</h2>
+            <p
+              style="font-size: 1.1rem; line-height: 1.6; color: var(--color-soft-white); margin-top: 1rem; margin-bottom: 2rem;">
+              Never run out of ammunition mid-firefight. Our 100% bio-degradable, bright-splatter tournament paint is
+              formulated specifically for our calibrated barrels.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="pulse-dot"></span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-green);">Non-Toxic &amp;
+                  Eco-Safe</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="pulse-dot" style="background-color: var(--color-purple);"></span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-white);">Easy Wash Formula</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ammo Pricing Crate Grid -->
+          <div class="ammo-crates-grid">
+
+            <div class="ammo-crate-tile hover-lift">
+              <div>
+                <span class="section-eyebrow">Field Bag</span>
+                <div class="ammo-round-count">500 Rounds</div>
+                <p style="font-size: 0.85rem; color: var(--color-soft-white); margin-top: 0.25rem;">Standard hopper
+                  replenishment</p>
+              </div>
+              <div class="ammo-price">$25</div>
+            </div>
+
+            <div class="ammo-crate-tile hover-lift">
+              <div>
+                <span class="section-eyebrow">Combat Pack</span>
+                <div class="ammo-round-count">1,000 Rounds</div>
+                <p style="font-size: 0.85rem; color: var(--color-soft-white); margin-top: 0.25rem;">Dual pod refill
+                  package</p>
+              </div>
+              <div class="ammo-price">$45</div>
+            </div>
+
+            <div class="ammo-crate-tile featured-ammo hover-lift">
+              <div>
+                <span class="section-eyebrow" style="color: var(--color-green);">Best Squad Value</span>
+                <div class="ammo-round-count">2,000 Rounds</div>
+                <p style="font-size: 0.85rem; color: var(--color-soft-white); margin-top: 0.25rem;">Full 4-bag
+                  tournament sealed crate</p>
+              </div>
+              <div class="ammo-price">$80</div>
+            </div>
+
+            <div class="ammo-crate-tile hover-lift">
+              <div>
+                <span class="section-eyebrow" style="color: var(--color-purple);">Tactical Pyros</span>
+                <div class="ammo-round-count">Smoke Grenade</div>
+                <p style="font-size: 0.85rem; color: var(--color-soft-white); margin-top: 0.25rem;">Cold-burning
+                  high-density smoke</p>
+              </div>
+              <div class="ammo-price">$15 <small
+                  style="font-size: 0.8rem; color: var(--color-soft-white);">/unit</small></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HARDWARE RENTAL UPGRADES (Modular Armory Mod Station) -->
+    <section class="rentals-section" aria-labelledby="rentals-title">
+      <div class="site-container">
+
+        <div class="section-header-row"
+          style="text-align: center; justify-content: center; flex-direction: column; align-items: center;">
+          <div class="hero-badge-pill" style="margin-bottom: 1rem;">
+            <span class="pulse-dot"></span>
+            <span>Modular Armory Bench // Check-In Tactical Customization</span>
+          </div>
+          <h2 id="rentals-title" class="section-title">Hardware Rental Add-Ons</h2>
+          <p style="font-size: 1.1rem; color: var(--color-soft-white); max-width: 640px; margin-top: 0.5rem;">
+            Customize your battle kit at check-in. Upgrade any standard marker, optics, body rig, or team radio on demand.
+          </p>
+        </div>
+
+        <!-- Armory Mod Station Frame -->
+        <div class="armory-mod-station">
+
+          <!-- Top Toolbar: Filters & Live Depot Status -->
+          <div class="mod-station-toolbar">
+            <div class="mod-filter-group">
+              <button type="button" class="mod-tab-btn active" data-mod-filter="all">All (6)</button>
+              <button type="button" class="mod-tab-btn" data-mod-filter="weapon">Marker &amp; Optics</button>
+              <button type="button" class="mod-tab-btn" data-mod-filter="gear">Armor &amp; Harness</button>
+              <button type="button" class="mod-tab-btn" data-mod-filter="comms">Comms &amp; Radio</button>
+            </div>
+            <div class="mod-system-status">
+              <span class="pulse-dot"></span>
+              <span>ARMORY DEPOT: IN STOCK</span>
+            </div>
+          </div>
+
+          <!-- 6 Tactical Mod Cards Grid -->
+          <div class="mod-cards-grid">
+
+            <!-- Mod 1: Electronic Marker Upgrade -->
+            <div class="mod-item-card" data-category="weapon" data-cost="20" onclick="toggleRentalAddon(this)">
+              <div class="mod-item-top">
+                <div class="mod-slot-code">
+                  <span class="mod-code-text">SLOT-01</span>
+                  <span class="mod-type-pill weapon">FIREPOWER</span>
+                </div>
+                <div class="mod-checkbox">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="mod-item-body">
+                <div class="mod-icon-box">
+                  <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div class="mod-item-info">
+                  <h4 class="mod-item-name">Electronic Marker Upgrade</h4>
+                  <div class="mod-metric-badge">12.5 BPS Electro-Pneumatic Ramp</div>
+                </div>
+              </div>
+              <div class="mod-item-footer">
+                <span class="mod-price-tag">+$20 <small>/session</small></span>
+                <span class="mod-select-action">Select Add-On</span>
+              </div>
+            </div>
+
+            <!-- Mod 2: Thermal Mask Upgrade -->
+            <div class="mod-item-card" data-category="gear" data-cost="10" onclick="toggleRentalAddon(this)">
+              <div class="mod-item-top">
+                <div class="mod-slot-code">
+                  <span class="mod-code-text">SLOT-02</span>
+                  <span class="mod-type-pill gear">OPTICS</span>
+                </div>
+                <div class="mod-checkbox">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="mod-item-body">
+                <div class="mod-icon-box">
+                  <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </div>
+                <div class="mod-item-info">
+                  <h4 class="mod-item-name">Thermal Anti-Fog Mask</h4>
+                  <div class="mod-metric-badge">Zero Condensation Dual Pane</div>
+                </div>
+              </div>
+              <div class="mod-item-footer">
+                <span class="mod-price-tag">+$10 <small>/session</small></span>
+                <span class="mod-select-action">Select Add-On</span>
+              </div>
+            </div>
+
+            <!-- Mod 3: 4-Pod Battle Harness -->
+            <div class="mod-item-card" data-category="gear" data-cost="12" onclick="toggleRentalAddon(this)">
+              <div class="mod-item-top">
+                <div class="mod-slot-code">
+                  <span class="mod-code-text">SLOT-03</span>
+                  <span class="mod-type-pill gear">RIG &amp; AMMO</span>
+                </div>
+                <div class="mod-checkbox">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="mod-item-body">
+                <div class="mod-icon-box">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+                </div>
+                <div class="mod-item-info">
+                  <h4 class="mod-item-name">4-Pod Battle Harness</h4>
+                  <div class="mod-metric-badge">+560 Extra Rounds Capacity</div>
+                </div>
+              </div>
+              <div class="mod-item-footer">
+                <span class="mod-price-tag">+$12 <small>/session</small></span>
+                <span class="mod-select-action">Select Add-On</span>
+              </div>
+            </div>
+
+            <!-- Mod 4: Tactical Camo Coveralls -->
+            <div class="mod-item-card" data-category="gear" data-cost="8" onclick="toggleRentalAddon(this)">
+              <div class="mod-item-top">
+                <div class="mod-slot-code">
+                  <span class="mod-code-text">SLOT-04</span>
+                  <span class="mod-type-pill gear">BODY ARMOR</span>
+                </div>
+                <div class="mod-checkbox">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="mod-item-body">
+                <div class="mod-icon-box">
+                  <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="mod-item-info">
+                  <h4 class="mod-item-name">Tactical Camo Coveralls</h4>
+                  <div class="mod-metric-badge">Padded Neck &amp; Impact Cushion</div>
+                </div>
+              </div>
+              <div class="mod-item-footer">
+                <span class="mod-price-tag">+$8 <small>/session</small></span>
+                <span class="mod-select-action">Select Add-On</span>
+              </div>
+            </div>
+
+            <!-- Mod 5: Tactical Reflex Red-Dot -->
+            <div class="mod-item-card" data-category="weapon" data-cost="15" onclick="toggleRentalAddon(this)">
+              <div class="mod-item-top">
+                <div class="mod-slot-code">
+                  <span class="mod-code-text">SLOT-05</span>
+                  <span class="mod-type-pill weapon">SIGHTING</span>
+                </div>
+                <div class="mod-checkbox">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="mod-item-body">
+                <div class="mod-icon-box">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line></svg>
+                </div>
+                <div class="mod-item-info">
+                  <h4 class="mod-item-name">Tactical Reflex Red-Dot</h4>
+                  <div class="mod-metric-badge">Illuminated Reticle Zeroing</div>
+                </div>
+              </div>
+              <div class="mod-item-footer">
+                <span class="mod-price-tag">+$15 <small>/session</small></span>
+                <span class="mod-select-action">Select Add-On</span>
+              </div>
+            </div>
+
+            <!-- Mod 6: Squad Comms Radio Set -->
+            <div class="mod-item-card" data-category="comms" data-cost="10" onclick="toggleRentalAddon(this)">
+              <div class="mod-item-top">
+                <div class="mod-slot-code">
+                  <span class="mod-code-text">SLOT-06</span>
+                  <span class="mod-type-pill comms">COMMS</span>
+                </div>
+                <div class="mod-checkbox">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <div class="mod-item-body">
+                <div class="mod-icon-box">
+                  <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                </div>
+                <div class="mod-item-info">
+                  <h4 class="mod-item-name">Squad Comms Radio Set</h4>
+                  <div class="mod-metric-badge">Push-To-Talk Private Channel</div>
+                </div>
+              </div>
+              <div class="mod-item-footer">
+                <span class="mod-price-tag">+$10 <small>/session</small></span>
+                <span class="mod-select-action">Select Add-On</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Live Telemetry / Total Tally Bar -->
+          <div class="mod-tally-bar">
+            <div class="mod-tally-left">
+              <div class="mod-tally-indicator">
+                <span class="tally-count" id="selected-mods-count">0</span>
+                <span class="tally-label">Modules Selected</span>
+              </div>
+              <div class="mod-tally-divider"></div>
+              <div class="mod-tally-total-wrap">
+                <span class="tally-total-label">Estimated Add-On:</span>
+                <span class="tally-total-amount" id="selected-mods-total">+$0</span>
+              </div>
+            </div>
+            <div class="mod-tally-right">
+              <a href="book-session.html" class="btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.9rem;">
+                <span>Enlist With Upgrades</span>
+                <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; margin-left: 0.35rem;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: ANNUAL CLAN MEMBERSHIP -->
+    <section class="membership-section" aria-labelledby="membership-title">
+      <div class="site-container">
+
+        <div class="membership-banner-card hover-lift">
+          <div class="membership-content-col">
+            <span class="section-eyebrow" style="color: var(--color-green);">Elite Tier Membership</span>
+            <h2 id="membership-title" class="membership-heading">
+              Annual Battlefield Clan Pass
+            </h2>
+            <p class="membership-desc">
+              For regular squads and tournament competitors. Enjoy year-round field entry, substantial discounts on
+              paint crates, and member-only night skirmishes.
+            </p>
+
+            <div class="membership-perks-list">
+              <div class="membership-perk-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Free Field Entry All Year Round</span>
+              </div>
+              <div class="membership-perk-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Unlimited Free 3,000 PSI Air Fills</span>
+              </div>
+              <div class="membership-perk-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>25% Off Bulk Paintball Crates</span>
+              </div>
+              <div class="membership-perk-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Private Gear Locker Access</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="membership-pricing-col">
+            <span class="membership-pricing-badge">Annual Pass</span>
+            <div class="membership-price-val">$349</div>
+            <span class="membership-price-sub">Billed annually &bull; Pays off in 6 visits</span>
+            <a href="book-session.html" class="btn-primary" style="width: 100%; justify-content: center;">
+              <span>Enlist In Clan Pass</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER
+       ========================================================================== -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand & Status -->
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/images/brand/logo.png" alt="Paintball Arena Official Logo" class="footer-logo-img">
+            <div>
+              <div class="footer-brand-title">Paintball Arena</div>
+              <div class="footer-brand-subtitle">Combat Ops</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Premier tactical combat arena featuring multi-terrain battlegrounds, electronic hit-scoring, competitive
+            speedball grids, and military-grade rental gear.
+          </p>
+          <div class="footer-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Arena Status: OPEN / Live Matches</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Arena Navigation -->
+        <div>
+          <div class="footer-title">Combat Grid</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tactical HQ (Home 1)</a></li>
+            <li><a href="home-2.html">Warzone (Home 2)</a></li>
+            <li><a href="index.html#zones">Arena Battlefield Zones</a></li>
+            <li><a href="packages.html">Armory &amp; Paint Packages</a></li>
+            <li><a href="events.html">Corporate &amp; Squad Battles</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Player Services -->
+        <div>
+          <div class="footer-title">Player Services</div>
+          <ul class="footer-links-list">
+            <li><a href="book-session.html">Slot Reservations</a></li>
+            <li><a href="login.html">Player Dashboard Login</a></li>
+            <li><a href="#rules">Rules of Engagement</a></li>
+            <li><a href="#waiver">Digital Safety Waiver</a></li>
+            <li><a href="contact.html">Dispatch &amp; Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Operations & Dispatch HQ -->
+        <div>
+          <div class="footer-title">Operations HQ</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Sector 7 Tactical Grounds, 452 Combat Way, Metro Arena District</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Mon - Sun: 08:00 AM - 11:00 PM (Night Ops)</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 555-PAINT (7246)</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 Paintball Arena Inc. All tactical rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Safety Terms</a>
+          <a href="#">Waiver Verification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

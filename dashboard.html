@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintball Arena | Player Operations Command Dashboard</title>
+  <meta name="description"
+    content="Official Paintball Arena Player Dashboard. Manage reserved session slots, purchase ammo and gear upgrades, track live game scores, and review match day milestones.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body style="padding-top: 0;">
+
+  <!-- ==========================================================================
+       BRANDED PAGE LOADER
+       ========================================================================== -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Tactical Logo" class="loader-logo">
+    </div>
+    <div class="loader-text">
+      <span>Accessing Command Fleet</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <div class="dash-app-container">
+
+    <!-- ==========================================================================
+         TOP BAR (STICKY COMMAND HEADER)
+         ========================================================================== -->
+    <header class="dash-app-topbar" role="banner">
+
+      <!-- Top Left: Brand Logo & Title -->
+      <div class="dash-topbar-brand">
+        <a href="index.html" class="dash-topbar-brand-link" aria-label="Return to Homepage">
+          <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="dash-topbar-logo">
+          <div class="dash-topbar-brand-text">
+            <span class="dash-topbar-brand-name">Paintball Arena</span>
+            <span class="dash-topbar-brand-sub">Combat Ops</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Top Right: Theme Toggle, RTL Toggle, User Profile Dropdown, Mobile Sidebar Toggle -->
+      <div class="dash-topbar-actions">
+
+        <!-- Dark Mode Toggle Button -->
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span class="theme-text">Dark</span>
+        </button>
+
+        <!-- RTL Toggle Button -->
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <svg viewBox="0 0 24 24">
+            <polyline points="8 4 4 8 8 12"></polyline>
+            <polyline points="16 20 20 16 16 12"></polyline>
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="20" y1="16" x2="4" y2="16"></line>
+          </svg>
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        <!-- User Profile Pill & Dropdown -->
+        <div class="dash-profile-menu-wrap" id="dash-profile-wrap">
+          <button type="button" class="dash-top-user-pill hover-lift" id="dash-profile-btn" aria-haspopup="true"
+            aria-expanded="false" aria-label="Open Operator Profile Menu">
+            <div class="dash-user-initials">V9</div>
+            <span class="dash-user-name">Commander Viper-9</span>
+            <svg class="dash-pill-chevron" viewBox="0 0 24 24"
+              style="width: 16px; height: 16px; stroke: #8c90a4; fill: none; stroke-width: 2.2;">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          <!-- Interactive Profile Dropdown Menu -->
+          <div class="dash-profile-dropdown" id="dash-profile-dropdown" role="menu" aria-label="Operator Profile Menu">
+
+            <div class="dropdown-operator-header">
+              <div class="dropdown-avatar">V9</div>
+              <div class="dropdown-operator-info">
+                <div class="dropdown-callsign">Commander Viper-9</div>
+                <div class="dropdown-email">viper9.tactical@paintballarena.com</div>
+                <div class="dropdown-clearance-tag">
+                  <span class="pulse-dot"></span>
+                  <span>Clearance Level 28 • Active</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <nav class="dropdown-nav-links">
+              <a href="#operator-profile" class="dropdown-link" role="menuitem">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Operator Dossier</span>
+              </a>
+              <a href="#fleet-manifest" class="dropdown-link" role="menuitem">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                <span>Reserved Fleet Manifest</span>
+              </a>
+              <a href="#telemetry-records" class="dropdown-link" role="menuitem">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <span>Telemetry Match Log</span>
+              </a>
+              <a href="#armory-store" class="dropdown-link" role="menuitem">
+                <svg viewBox="0 0 24 24">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+                <span>Munitions Locker</span>
+              </a>
+            </nav>
+
+            <div class="dropdown-divider"></div>
+
+            <!-- Prominent Logout Button -->
+            <a href="login.html" class="dash-dropdown-logout" id="dash-logout-btn" role="menuitem">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Sign Out / Log Out</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Mobile Sidebar Toggle Button (POSITIONED ON THE RIGHT) -->
+        <button type="button" class="dash-sidebar-toggle-btn" id="dash-sidebar-toggle"
+          aria-label="Toggle Navigation Sidebar">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- Mobile Sidebar Drawer Backdrop Overlay -->
+    <div class="dash-sidebar-backdrop" id="dash-sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ==========================================================================
+         DASHBOARD APP LAYOUT: SIDEBAR + MAIN CONTENT
+         ========================================================================== -->
+    <div class="dash-app-layout">
+
+      <!-- LEFT SIDEBAR (STICKY ON DESKTOP, OFF-CANVAS ON MOBILE) -->
+      <aside class="dash-app-sidebar" id="dash-app-sidebar" aria-label="Dashboard Side Navigation">
+
+        <!-- Mobile Drawer Close Header -->
+        <div class="dash-sidebar-head-mobile">
+          <button type="button" class="dash-sidebar-close-btn" id="dash-sidebar-close" aria-label="Close Sidebar">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="dash-sidebar-menu">
+          <li>
+            <a href="#operator-profile" class="dash-sidebar-link">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Operator Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="#milestones-schedule" class="dash-sidebar-link">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Combat Milestones</span>
+            </a>
+          </li>
+          <li>
+            <a href="#fleet-manifest" class="dash-sidebar-link">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+              <span>Active Fleet Manifest</span>
+            </a>
+          </li>
+          <li>
+            <a href="#armory-store" class="dash-sidebar-link">
+              <svg viewBox="0 0 24 24">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>Munitions Checkout</span>
+            </a>
+          </li>
+          <li>
+            <a href="#telemetry-records" class="dash-sidebar-link">
+              <svg viewBox="0 0 24 24">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              <span>Telemetry Records</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile Sidebar Toggles (Theme & RTL - Inside Mobile Drawer) -->
+        <div class="dash-sidebar-mobile-toggles">
+          <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span class="theme-text">Dark</span>
+          </button>
+
+          <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+            <svg viewBox="0 0 24 24">
+              <polyline points="8 4 4 8 8 12"></polyline>
+              <polyline points="16 20 20 16 16 12"></polyline>
+              <line x1="4" y1="8" x2="20" y2="8"></line>
+              <line x1="20" y1="16" x2="4" y2="16"></line>
+            </svg>
+            <span class="rtl-text">RTL</span>
+          </button>
+        </div>
+
+        <!-- Bottom Log Out Button -->
+        <a href="login.html" class="dash-sidebar-logout" id="dash-sidebar-logout-btn">
+          <svg viewBox="0 0 24 24"
+            style="width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2;">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Log Out</span>
+        </a>
+
+      </aside>
+
+      <!-- MAIN APP DASHBOARD BODY (EXACTLY 5 SECTIONS, UNIFIED THEME) -->
+      <main class="dash-app-main" id="main-content">
+
+        <!-- SECTION 1: WELCOME BANNER & TOP 4 METRICS CARDS -->
+        <section id="overview" class="dash-kpi-section" aria-labelledby="welcome-name-title">
+
+          <!-- Welcome Greeting Row -->
+          <div id="operator-profile" class="dash-welcome-header">
+            <div class="dash-welcome-avatar">V9</div>
+            <div>
+              <div class="dash-welcome-greeting">Welcome back,</div>
+              <h1 id="welcome-name-title" class="dash-welcome-name">Commander Viper-9 &amp; Ghost Recon</h1>
+            </div>
+          </div>
+
+          <!-- 4 KPI / Metric Cards Grid -->
+          <div class="dash-kpis-grid">
+
+            <!-- Card 1: Tactical Skirmish Countdown -->
+            <div class="dash-kpi-card hover-lift">
+              <span class="dash-kpi-label">Skirmish Countdown</span>
+              <div class="countdown-flex-row">
+                <div class="countdown-circle-badge">28</div>
+                <div>
+                  <div class="countdown-text-title">Days to Match</div>
+                  <div class="countdown-text-sub">14 October 2026</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Operator Rank Tier -->
+            <div class="dash-kpi-card hover-lift">
+              <span class="dash-kpi-label">Operator Rank Tier</span>
+              <div>
+                <div class="tier-title">Elite Commander</div>
+                <div class="tier-sub">Ghost Recon Squad Leader • Level 28</div>
+                <div class="tier-progress-track">
+                  <div class="tier-progress-fill"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Reserved Squad Slots -->
+            <div class="dash-kpi-card hover-lift" style="border-color: var(--color-green);">
+              <span class="dash-kpi-label">Active Squad Slots</span>
+              <div>
+                <div class="kpi-big-num">12</div>
+                <div class="kpi-num-sub">Assigned Combat Operators</div>
+              </div>
+            </div>
+
+            <!-- Card 4: Match Briefing Status -->
+            <div class="dash-kpi-card hover-lift">
+              <span class="dash-kpi-label">Match Readiness</span>
+              <div>
+                <button type="button" class="btn-primary dash-kpi-btn"
+                  onclick="alert('Tactical Briefing Confirmed! Sector 7 Referees & Chrono Station Alerted.');">
+                  <svg viewBox="0 0 24 24"
+                    style="width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 3;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Confirm Briefing</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- SECTION 2: COMBAT MILESTONES — MATCH DAY SCHEDULE -->
+        <section id="milestones-schedule" class="dash-milestones-card hover-lift"
+          aria-labelledby="milestones-title-head">
+
+          <div class="milestones-header-row">
+            <div>
+              <div class="milestones-title" id="milestones-title-head">
+                <svg viewBox="0 0 24 24">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Combat Milestones — Match Day Schedule</span>
+              </div>
+              <p class="milestones-sub">Confirmed timeline with 30-minute radar chronograph calibration • Sector 7
+                Staging Base Alpha</p>
+            </div>
+            <span class="hero-badge-pill">
+              <span class="pulse-dot"></span>
+              <span>Live Confirmed Schedule</span>
+            </span>
+          </div>
+
+          <!-- 6 Pillars Timeline Bar Chart -->
+          <div class="timeline-pillars-grid">
+
+            <div class="timeline-pillar">
+              <div class="pillar-track">
+                <div class="pillar-fill fill-1"></div>
+              </div>
+              <div>
+                <div class="pillar-label-bold" style="color: var(--color-green);">Stage 1</div>
+                <div class="pillar-label-sub" style="font-weight: 700;">Base Check-In</div>
+              </div>
+            </div>
+
+            <div class="timeline-pillar">
+              <div class="pillar-track">
+                <div class="pillar-fill fill-2"></div>
+              </div>
+              <div>
+                <div class="pillar-label-bold" style="color: var(--color-green);">Stage 2</div>
+                <div class="pillar-label-sub" style="font-weight: 700;">Radar Chrono</div>
+              </div>
+            </div>
+
+            <div class="timeline-pillar">
+              <div class="pillar-track">
+                <div class="pillar-fill fill-3"></div>
+              </div>
+              <div>
+                <div class="pillar-label-bold" style="color: var(--color-green);">Stage 3</div>
+                <div class="pillar-label-sub" style="font-weight: 700;">Zone Drop</div>
+              </div>
+            </div>
+
+            <div class="timeline-pillar">
+              <div class="pillar-track">
+                <div class="pillar-fill fill-4"></div>
+              </div>
+              <div>
+                <div class="pillar-label-bold" style="color: var(--color-green);">Stage 4</div>
+                <div class="pillar-label-sub" style="font-weight: 700;">CQB Phase</div>
+              </div>
+            </div>
+
+            <div class="timeline-pillar">
+              <div class="pillar-track">
+                <div class="pillar-fill fill-5"></div>
+              </div>
+              <div>
+                <div class="pillar-label-bold" style="color: var(--color-green);">Stage 5</div>
+                <div class="pillar-label-sub" style="font-weight: 700;">Speedball Push</div>
+              </div>
+            </div>
+
+            <div class="timeline-pillar">
+              <div class="pillar-track">
+                <div class="pillar-fill fill-6"></div>
+              </div>
+              <div>
+                <div class="pillar-label-bold" style="color: var(--color-green);">Stage 6</div>
+                <div class="pillar-label-sub" style="font-weight: 700;">Debrief &amp; Awards</div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- SECTION 3: RESERVED BATTLEFLEET SQUAD DETAILS -->
+        <section id="fleet-manifest" class="dash-section-wrap" aria-labelledby="fleet-manifest-head">
+          <div class="section-header-row">
+            <div>
+              <span class="section-eyebrow">Squad Operations</span>
+              <h2 id="fleet-manifest-head" class="dash-section-title">Active Combat Fleet Manifest</h2>
+            </div>
+
+          </div>
+
+          <div class="active-booking-card hover-lift">
+            <div class="booking-header-bar">
+              <div>
+                <span class="section-eyebrow">Mission Code: #FLEET-88319</span>
+                <h3 class="booking-card-title">Saturday Night VIP Escort &amp; CQB Skirmish</h3>
+              </div>
+              <div class="footer-status-pill">
+                <span class="pulse-dot"></span>
+                <span>Confirmed • Marshals &amp; Referees Ready</span>
+              </div>
+            </div>
+
+            <div class="booking-details-grid">
+              <div>
+                <span class="b-cell-label">Engagement Date</span>
+                <div class="b-cell-val">Oct 14, 2026 • 09:30 AM</div>
+              </div>
+              <div>
+                <span class="b-cell-label">Battlefield Zone</span>
+                <div class="b-cell-val zone-val">Zone Bravo (Urban CQB)</div>
+              </div>
+              <div>
+                <span class="b-cell-label">Assigned Operators</span>
+                <div class="b-cell-val">12 Active Fleet Members</div>
+              </div>
+              <div>
+                <span class="b-cell-label">Package Tier</span>
+                <div class="b-cell-val tier-val">Elite Commander Tier ($89)</div>
+              </div>
+            </div>
+
+            <div class="booking-actions-row">
+              <button type="button" class="btn-primary"
+                onclick="alert('Digital Turnstile Pass: Present QR at Staging Base Alpha.');"
+                style="padding: 0.6rem 1.25rem;">
+                <span>View Digital Pass</span>
+              </button>
+              <button type="button" class="btn-secondary" onclick="alert('Squad Roster: 12/12 players assigned.');"
+                style="padding: 0.6rem 1.25rem;">
+                <span>Edit Squad Roster</span>
+              </button>
+              <button type="button" class="util-btn"
+                onclick="alert('Reschedule window open: Free date alteration valid 48h prior.');"
+                style="padding: 0.6rem 1.25rem;">
+                <span>Reschedule Route</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 4: RAPID MUNITIONS & GEAR CHECKOUT -->
+        <section id="armory-store" class="dash-section-wrap" aria-labelledby="ammo-store-head">
+          <div class="section-header-row">
+            <div>
+              <span class="section-eyebrow">Armory Upgrades</span>
+              <h2 id="ammo-store-head" class="dash-section-title">Munitions &amp; Tactical Checkout</h2>
+            </div>
+            <span class="dash-section-sub">Pre-loaded to your locker</span>
+          </div>
+
+          <div class="store-items-grid">
+            <div class="store-item-card hover-lift">
+              <div>
+                <span class="section-eyebrow">Competition Munitions</span>
+                <h3 class="store-card-title">1,000 High-Velocity Rounds</h3>
+                <p class="store-card-desc">Seamless spherical shell for pinpoint accuracy across long combat alleys.</p>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span class="store-card-price">$45</span>
+                <button type="button" class="btn-primary" onclick="alert('1,000 Rounds Added to Fleet Locker #14!');"
+                  style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">
+                  <span>+ Add To Fleet</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="store-item-card hover-lift">
+              <div>
+                <span class="section-eyebrow" style="color: var(--color-purple);">Screening Pyros</span>
+                <h3 class="store-card-title">Twin High-Density Smoke Canisters</h3>
+                <p class="store-card-desc">1 Tactical Green + 1 Violet high-opacity smoke grenade for offensive pushes.
+                </p>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span class="store-card-price">$30</span>
+                <button type="button" class="btn-primary" onclick="alert('Twin Smoke Pack Added!');"
+                  style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">
+                  <span>+ Add To Fleet</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="store-item-card hover-lift">
+              <div>
+                <span class="section-eyebrow">Vision Optics</span>
+                <h3 class="store-card-title">Thermal Anti-Fog Mask Rental</h3>
+                <p class="store-card-desc">Dual-pane thermal lens with 260° field of view. Guaranteed zero moisture
+                  fogging.</p>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <span class="store-card-price">$12</span>
+                <button type="button" class="btn-primary" onclick="alert('Thermal Mask Upgrade Reserved!');"
+                  style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">
+                  <span>+ Add To Fleet</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5: LIVE COMBAT TELEMETRY & MATCH ARCHIVE -->
+        <section id="telemetry-records" class="dash-section-wrap" aria-labelledby="telemetry-head-title">
+          <div class="section-header-row">
+            <div>
+              <span class="section-eyebrow">Electronic Telemetry</span>
+              <h2 id="telemetry-head-title" class="dash-section-title">Telemetry Match Records</h2>
+            </div>
+            <button type="button" class="btn-secondary" onclick="alert('Telemetry CSV Exported!');"
+              style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+              <span>Export CSV</span>
+            </button>
+          </div>
+
+          <div class="telemetry-table-scroll">
+            <div class="telemetry-table-card hover-lift">
+              <div class="telemetry-row head">
+                <span>Date</span>
+                <span>Combat Scenario</span>
+                <span>Battleground</span>
+                <span>Hits Taken / Given</span>
+                <span>Division Score</span>
+                <span>Result</span>
+              </div>
+
+              <div class="telemetry-row">
+                <span class="telemetry-date-text">Sep 19, 2026</span>
+                <span class="telemetry-scenario-text">VIP Squad Escort</span>
+                <span style="color: var(--color-green); font-weight: 700;">Zone Bravo (Urban CQB)</span>
+                <span class="telemetry-stat-text">42 Hits / 3 Taken</span>
+                <span style="font-weight: 800; color: var(--color-green);">+350 PTS</span>
+                <span class="match-badge win">VICTORY</span>
+              </div>
+
+              <div class="telemetry-row">
+                <span class="telemetry-date-text">Sep 12, 2026</span>
+                <span class="telemetry-scenario-text">Search &amp; Destroy</span>
+                <span style="color: var(--color-purple); font-weight: 700;">Zone Alpha (Speedball)</span>
+                <span class="telemetry-stat-text">31 Hits / 6 Taken</span>
+                <span style="font-weight: 800; color: var(--color-green);">+280 PTS</span>
+                <span class="match-badge win">VICTORY</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

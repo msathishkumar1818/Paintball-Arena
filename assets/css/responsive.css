@@ -1,0 +1,1773 @@
+/* ==========================================================================
+   PAINTBALL ARENA - RESPONSIVE STYLESHEET (responsive.css)
+   Targeting:
+   - 1920px+ (Ultra-wide)
+   - 1440px / 1280px (Desktop / Laptop)
+   - 1024px (iPad Pro, Tablets Landscape)
+   - 820px / 768px (iPad, Tablets Portrait)
+   - 425px / 390px / 375px (iPhone 13/14/15/16 Pro, Pixel 7/8/9/10)
+   - 320px (Compact Mobile)
+   ========================================================================== */
+
+/* Large Desktops & High-Res Screens (1280px - 1440px+) */
+@media (min-width: 1280px) {
+  .desktop-nav {
+    gap: 1.75rem;
+  }
+}
+
+/* Laptops & Compact Desktops (1025px - 1279px) */
+@media (max-width: 1279px) {
+  .desktop-nav {
+    gap: 0.85rem;
+  }
+  
+  .nav-link {
+    font-size: 0.84rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .header-actions .util-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-login {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+}
+
+/* Tablet Landscape & Below (<= 1024px) - Clean Switch to Mobile Drawer */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 66px;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-toggle-btn {
+    display: inline-flex;
+  }
+
+  .header-actions .util-btn {
+    display: none; /* Accessible inside mobile drawer */
+  }
+
+  /* Hide Login button in header on mobile — it lives inside the drawer */
+  .btn-login-desktop {
+    display: none !important;
+  }
+
+  /* Mobile drawer Login button styling */
+  .mobile-login-wrap {
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin-top: 0.25rem;
+  }
+
+  .mobile-login-btn {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.7rem 1.25rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Tablet Portrait (<= 768px - iPad, iPad Mini, Surface) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  .brand-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.65rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Mobile Devices (<= 480px - iPhone 13/14/15/16 Pro, Pixel 7/8/9/10, Galaxy S) */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .brand-tagline {
+    display: block;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+    margin-top: 1px;
+  }
+
+  .brand-name {
+    font-size: 0.98rem;
+  }
+
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .btn-login span {
+    display: inline; /* Compact login button text remains visible */
+  }
+
+  .btn-login {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.825rem;
+  }
+
+  .btn-login svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .mobile-toggle-btn {
+    padding: 0.35rem;
+  }
+
+  .mobile-toggle-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mobile-menu-drawer {
+    max-width: 88%;
+  }
+
+  #scroll-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+  }
+
+  html[dir="rtl"] #scroll-to-top {
+    left: 16px;
+  }
+}
+
+/* Compact Mobile (<= 360px - Small Viewports) */
+@media (max-width: 360px) {
+  .brand-name {
+    font-size: 0.9rem;
+  }
+
+  .btn-login {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.78rem;
+    gap: 0.3rem;
+  }
+}
+
+/* ==========================================================================
+   PAGE SECTION RESPONSIVE RULES (Tablets & Mobile)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-main-img {
+    height: 420px;
+  }
+
+  .zones-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .armory-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .protocol-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .leaderboard-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .zones-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .match-slot-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .match-slot-row .btn-primary {
+    grid-column: span 2;
+    justify-content: center;
+  }
+
+  .armory-main-img,
+  .protocol-img {
+    height: 340px;
+  }
+
+  .hero-heading {
+    font-size: 2.25rem;
+  }
+
+  .hero-main-img {
+    height: 320px;
+  }
+
+  .hero-hud-badge {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  html[dir="rtl"] .hero-hud-badge {
+    right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 1.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .match-slot-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .match-slot-row .btn-primary {
+    grid-column: span 1;
+  }
+
+  .rank-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .rank-score {
+    text-align: left;
+  }
+
+  html[dir="rtl"] .rank-score {
+    text-align: right;
+  }
+}
+
+/* Home 2 Tablet & Mobile Adaptations */
+@media (max-width: 1024px) {
+  .map-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .scenario-card-block {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .scenario-card-block.reverse {
+    direction: ltr;
+  }
+
+  .experience-mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gateway-form-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .gateway-form-strip > div:last-child {
+    grid-column: span 2;
+  }
+
+  .gateway-form-strip .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinematic-heading {
+    font-size: 2.25rem;
+  }
+
+  .warzone-ticker-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mosaic-dual-images {
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic-img-card {
+    height: 260px;
+  }
+
+  .matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .gateway-form-strip {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gateway-form-strip > div:last-child {
+    grid-column: span 1;
+  }
+
+  .gateway-form-strip .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .experience-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cinematic-heading {
+    font-size: 1.85rem;
+  }
+
+  .hud-reticle-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .experience-debrief-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Book Session Tablet & Mobile Adaptations */
+@media (max-width: 1024px) {
+  .booking-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .booking-customizer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .inclusions-spec-strip,
+  .inclusions-tactical-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .inclusions-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .bento-card.span-2 {
+    grid-column: span 2;
+  }
+
+  .inclusions-split-manifest {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .inclusions-reassurance-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .waiver-split-layout,
+  .clearance-console-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-tracker-bar {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .theaters-radio-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .slot-picker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .package-select-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inclusions-spec-strip,
+  .inclusions-tactical-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .inclusions-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .bento-card.span-2 {
+    grid-column: span 1;
+  }
+
+  .bento-card {
+    min-height: 240px;
+  }
+
+  .directives-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Packages & Pricing Tablet & Mobile Adaptations */
+@media (max-width: 1024px) {
+  .pkg-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .tier-wide-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .tier-col-specs {
+    border-left: none;
+    border-right: none;
+    padding: 1.25rem 0;
+    border-top: 1.5px solid #3c3f4e;
+    border-bottom: 1.5px solid #3c3f4e;
+  }
+
+  .ammo-split-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .membership-banner-card {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+    gap: 2rem;
+  }
+
+  .mod-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ammo-crates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rentals-matrix-grid,
+  .mod-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-station-toolbar,
+  .mod-tally-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .mod-filter-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .mod-tab-btn {
+    padding: 0.45rem 0.25rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+  }
+
+  .mod-system-status {
+    align-self: flex-start;
+  }
+
+  .mod-tally-right {
+    width: 100%;
+  }
+
+  .mod-tally-right .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .membership-banner-card {
+    padding: 1.75rem 1.25rem;
+    gap: 1.75rem;
+  }
+
+  .membership-heading {
+    font-size: 1.55rem;
+    line-height: 1.25;
+  }
+
+  .membership-pricing-col {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .membership-price-val {
+    font-size: 2.75rem;
+  }
+
+  .membership-perks-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Group & Corporate Events Tablet & Mobile Adaptations */
+@media (max-width: 1024px) {
+  .events-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .formats-quadrant-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .corp-flow-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rfq-card-wrapper {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .rfq-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .rfq-form-grid .full-span {
+    grid-column: span 1;
+  }
+
+  .event-stats-strip {
+    gap: 1.25rem;
+  }
+}
+
+/* Login & Dashboard Tablet & Mobile Adaptations */
+@media (max-width: 1024px) {
+  .login-auth-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .booking-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .store-items-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .store-items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .telemetry-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .telemetry-row.head {
+    display: none;
+  }
+
+  .payment-methods-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hud-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   CONTACT OPERATIONS RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .contact-hero-grid,
+  .logistics-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .location-command-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .map-iframe-container {
+    min-height: 380px;
+  }
+
+  .location-intel-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .schedule-grid-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .location-dispatch-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.35rem 1.75rem;
+  }
+
+  .strip-header {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .strip-actions {
+    display: flex;
+    gap: 0.85rem;
+    flex-shrink: 0;
+    align-items: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .schedule-grid-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .location-dispatch-strip {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding: 1.5rem 1.35rem;
+    gap: 1.25rem;
+  }
+
+  .strip-header {
+    width: 100%;
+  }
+
+  .strip-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .strip-actions a,
+  .contact-strip-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .contact-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .contact-hero-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .contact-stats-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .location-map-section {
+    padding: 3.5rem 0;
+  }
+
+  .map-iframe-container {
+    min-height: 320px;
+  }
+
+  .map-header-status {
+    padding: 0.85rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .map-card-footer {
+    padding: 0.85rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .map-directions-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .location-intel-card {
+    padding: 1.1rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .location-intel-column {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-grid-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .location-dispatch-strip {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem 1.15rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .strip-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .strip-actions a,
+  .contact-strip-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-all;
+  }
+
+  .wire-section {
+    padding: 3.5rem 0;
+  }
+
+  .wire-form-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .wire-submit-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .policy-banner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .strip-actions {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-section {
+    padding: 3rem 0 2rem;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .contact-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .contact-hero-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    font-size: 0.92rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .contact-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .contact-stat-label {
+    font-size: 0.7rem;
+  }
+
+  .contact-stat-val {
+    font-size: 1.05rem;
+  }
+
+  .location-map-section {
+    padding: 2.75rem 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .map-iframe-container {
+    min-height: 280px;
+  }
+
+  .intel-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+
+  .intel-icon-box svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .intel-title {
+    font-size: 0.98rem;
+  }
+
+  .intel-address,
+  .intel-badge-highlight {
+    font-size: 0.8rem;
+  }
+
+  .intel-desc {
+    font-size: 0.82rem;
+  }
+
+  .location-dispatch-strip {
+    padding: 1.15rem 0.95rem;
+  }
+
+  .strip-title {
+    font-size: 0.95rem;
+  }
+
+  .contact-strip-btn {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.85rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: break-all;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .wire-section {
+    padding: 2.75rem 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .wire-form-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.35rem 1rem;
+    border-radius: 10px;
+  }
+
+  .wire-submit-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    min-height: 52px;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .schedule-policy-section {
+    padding: 2.75rem 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .schedule-grid-wrap {
+    gap: 1.15rem;
+    margin-top: 1.75rem;
+  }
+
+  .hours-tile {
+    padding: 1.25rem 1rem;
+  }
+
+  .policy-banner-card {
+    padding: 1.25rem 1rem;
+  }
+}
+
+
+
+/* ==========================================================================
+   SPLIT LOGIN & APP DASHBOARD RESPONSIVE RULES
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .dash-app-main {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .dash-app-sidebar {
+    width: 230px;
+  }
+
+  .dash-kpis-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+  }
+
+  .timeline-pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .store-items-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .login-floating-header {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  html[dir="rtl"] .login-floating-header {
+    right: auto;
+    left: 1rem;
+  }
+
+  .login-floating-header .util-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .login-centered-wrapper {
+    padding: 3.5rem 0.85rem 1.25rem;
+  }
+
+  .login-floating-card {
+    padding: 1.5rem 1.15rem 1.35rem;
+    border-radius: 20px;
+  }
+
+  .login-social-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+
+  .login-social-pill {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .dash-sidebar-toggle-btn {
+    display: inline-flex;
+  }
+
+  .dash-sidebar-head-mobile {
+    display: flex;
+    justify-content: flex-end; /* close button aligned to right since logo removed */
+  }
+
+  /* Hide Theme and RTL toggles from topbar header on mobile */
+  .dash-topbar-actions .theme-toggle-btn,
+  .dash-topbar-actions .rtl-toggle-btn {
+    display: none !important;
+  }
+
+  /* Show Theme and RTL toggles inside mobile sidebar drawer */
+  .dash-sidebar-mobile-toggles {
+    display: flex !important;
+  }
+
+  .dash-app-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: 280px;
+    height: 100vh;
+    z-index: 2000;
+    transform: translateX(100%);
+    box-shadow: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    padding: 0.75rem 1rem 1.5rem;
+    border-left: 1.5px solid #282a36;
+    border-right: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+  }
+
+  html[dir="rtl"] .dash-app-sidebar {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+    border-right: 1.5px solid #282a36;
+    border-left: none;
+  }
+
+  .dash-app-sidebar.open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85) !important;
+  }
+
+  html[dir="rtl"] .dash-app-sidebar.open {
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.85) !important;
+  }
+
+  .dash-app-main {
+    width: 100%;
+    padding: 1.75rem 1.25rem 3rem;
+  }
+
+  .dash-kpis-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+  }
+
+  .store-items-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem;
+  }
+
+  .booking-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dash-app-topbar {
+    padding: 0 1.25rem;
+  }
+
+  .dash-kpis-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .timeline-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .dash-app-main {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .milestones-header-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .store-items-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  .booking-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .booking-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .booking-actions-row button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dash-app-topbar {
+    padding: 0 0.75rem;
+    height: 64px;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .dash-topbar-brand-link {
+    gap: 0.45rem;
+  }
+
+  .dash-topbar-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dash-topbar-brand-name {
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+  }
+
+  .dash-topbar-brand-sub {
+    font-size: 0.58rem;
+  }
+
+  .dash-topbar-actions {
+    gap: 0.35rem;
+  }
+
+  .dash-topbar-actions .util-btn {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.72rem;
+    border-radius: 6px;
+  }
+
+  .dash-topbar-actions .theme-text,
+  .dash-topbar-actions .rtl-text {
+    display: none;
+  }
+
+  .dash-sidebar-toggle-btn {
+    padding: 0.35rem;
+  }
+
+  .dash-sidebar-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dash-profile-menu-wrap {
+    position: static; /* let dropdown use fixed positioning on mobile */
+  }
+
+  .dash-profile-dropdown {
+    position: fixed;
+    top: 72px; /* below topbar */
+    right: 0.75rem;
+    left: auto;
+    width: min(300px, calc(100vw - 1.5rem));
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    z-index: 3000;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+    animation: dashDropRight 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes dashDropRight {
+    from {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.97);
+      transform-origin: top right;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  html[dir="rtl"] .dash-profile-dropdown {
+    right: auto;
+    left: 0.75rem;
+  }
+
+  .dash-welcome-header {
+    gap: 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dash-welcome-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .dash-welcome-name {
+    font-size: 1.4rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .dash-user-name {
+    display: none;
+  }
+
+  .dash-top-user-pill {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .timeline-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .hud-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mod-filter-group {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+  }
+
+  .mod-tab-btn {
+    padding: 0.48rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .membership-banner-card {
+    padding: 1.25rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .membership-heading {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .membership-desc {
+    font-size: 0.88rem;
+  }
+
+  .membership-pricing-col {
+    padding: 1.25rem 1rem;
+  }
+
+  .membership-price-val {
+    font-size: 2.25rem;
+  }
+
+  #scroll-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Battle Protocols & Deployment Layout Responsive */
+@media (max-width: 1024px) {
+  .protocol-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  .protocol-showcase-box {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.75rem !important;
+    padding: 1.75rem !important;
+  }
+
+  .protocol-showcase-img-wrap {
+    width: 100% !important;
+  }
+
+  .protocol-showcase-img {
+    width: 100% !important;
+    height: 280px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .protocol-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .protocol-card {
+    padding: 1.5rem 1.25rem !important;
+    width: 100% !important;
+  }
+
+  .protocol-showcase-box {
+    padding: 1.25rem !important;
+  }
+
+  .protocol-showcase-img {
+    height: 220px !important;
+  }
+
+  .protocol-showcase-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .protocol-showcase-actions .btn-primary,
+  .protocol-showcase-actions .btn-secondary {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Event Formats Quadrant Responsive (events.html Section 2) */
+@media (max-width: 900px) {
+  .formats-quadrant-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .format-card {
+    min-height: 480px;
+  }
+
+  .format-card-content {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .rfq-card-wrapper {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .formats-quadrant-grid {
+    gap: 1.5rem;
+  }
+
+  .format-card {
+    min-height: 440px;
+    border-radius: 12px;
+  }
+
+  .format-card-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .format-title {
+    font-size: 1.35rem;
+  }
+
+  .format-desc {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .format-perks-list {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .format-perk-line {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .rfq-section {
+    padding: 3.5rem 0;
+  }
+
+  .rfq-card-wrapper {
+    padding: 1.75rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .rfq-header-block {
+    margin-bottom: 1.75rem;
+  }
+
+  .rfq-section-title {
+    font-size: 1.6rem;
+  }
+
+  .rfq-section-desc {
+    font-size: 0.92rem;
+  }
+
+  .rfq-form-grid {
+    gap: 1.15rem;
+  }
+
+  .rfq-input {
+    font-size: 1rem;
+    padding: 0.8rem 0.95rem;
+  }
+
+  .rfq-submit-btn {
+    font-size: 1.02rem;
+    padding: 0.85rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .format-card {
+    min-height: auto;
+  }
+
+  .format-card-content {
+    padding: 1.25rem 1rem;
+  }
+
+  .format-head {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .format-capacity-tag {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.65rem;
+  }
+
+  .format-price-badge {
+    font-size: 1.15rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .format-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .format-desc {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    margin-bottom: 1.15rem;
+  }
+
+  .format-perks-list {
+    gap: 0.45rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .format-perk-line {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.65rem;
+    gap: 0.5rem;
+  }
+
+  .format-perk-line svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .format-cta-btn {
+    font-size: 0.88rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  .site-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rfq-section {
+    padding: 2.75rem 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .rfq-card-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.6rem 1.25rem;
+    border-radius: 12px;
+    border: 1.5px solid var(--color-green);
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .rfq-header-block {
+    margin-bottom: 1.35rem;
+  }
+
+  .rfq-section-title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .rfq-section-desc {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  .gateway-label {
+    font-size: 0.72rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .rfq-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.05rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rfq-field-group {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rfq-input {
+    font-size: 16px;
+    padding: 0.8rem 0.9rem;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  select.rfq-input {
+    background-position: right 0.75rem center;
+    padding-right: 2.25rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .date-input-wrapper {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .date-input-wrapper input[type="date"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .date-input-wrapper .calendar-white-icon {
+    right: 0.75rem;
+    width: 18px;
+    height: 18px;
+  }
+
+  .rfq-submit-btn {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+    min-height: 52px;
+    height: auto;
+    gap: 0.5rem;
+    white-space: normal !important;
+    word-break: normal !important;
+    text-align: center !important;
+    line-height: 1.35;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+  }
+
+  .rfq-submit-btn span {
+    text-align: center;
+  }
+
+  .rfq-submit-btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .site-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .rfq-card-wrapper {
+    padding: 1.35rem 0.9rem;
+    border-radius: 10px;
+  }
+
+  .rfq-section-title {
+    font-size: 1.22rem;
+  }
+
+  .rfq-input {
+    padding: 0.72rem 0.8rem;
+  }
+
+  .rfq-submit-btn {
+    font-size: 0.88rem;
+    padding: 0.75rem 0.65rem;
+  }
+}
+
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintball Arena | Customer Login &amp; Dashboard Access</title>
+  <meta name="description"
+    content="Sign in to your Paintball Arena account dashboard. Manage battleground reservations, track hit telemetry, and equip munitions.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="login-centered-body">
+
+  <!-- ==========================================================================
+       BRANDED PAGE LOADER
+       ========================================================================== -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="loader-logo">
+    </div>
+    <div class="loader-text">
+      <span>Authenticating Operator</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Top Right Floating Action Toggles (Exact Home 1 Theme & RTL Buttons) -->
+  <header class="login-floating-header" aria-label="Page Controls">
+    <div class="header-actions">
+      <!-- RTL / LTR Toggle -->
+      <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+        <svg viewBox="0 0 24 24">
+          <polyline points="8 4 4 8 8 12"></polyline>
+          <polyline points="16 20 20 16 16 12"></polyline>
+          <line x1="4" y1="8" x2="20" y2="8"></line>
+          <line x1="20" y1="16" x2="4" y2="16"></line>
+        </svg>
+        <span class="rtl-text">RTL</span>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="theme-text">Light</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CENTERED FLOATING CARD (MATCHING USER REFERENCE IMAGE)
+       ========================================================================== -->
+  <main class="login-centered-wrapper" id="main-content">
+    <div class="login-floating-card hover-lift">
+
+      <!-- 1. Top Brand Logo + Name -->
+      <a href="index.html" class="login-card-brand" aria-label="Return to Paintball Arena Homepage">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Official Logo" class="login-brand-logo-img">
+        <div class="login-brand-text-block">
+          <span class="login-card-brand-name">Paintball Arena</span>
+          <span class="login-card-brand-sub">Combat Ops</span>
+        </div>
+      </a>
+
+      <!-- 2. Heading & Subtitle -->
+      <h1 class="login-card-title">Welcome back</h1>
+      <p class="login-card-subtitle">Enter your credentials to access your account dashboard</p>
+
+      <!-- 3. Login Form -->
+      <form class="login-card-form"
+        onsubmit="event.preventDefault(); alert('Authentication Approved! Directing to Tactical Fleet Dashboard...'); window.location.href='dashboard.html';">
+
+        <!-- Email Address Field -->
+        <div class="login-input-group">
+          <label for="login-email" class="login-card-label">Email Address</label>
+          <div class="login-pill-input-wrap">
+            <svg class="login-pill-icon" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <input type="email" id="login-email" class="login-pill-input" placeholder="name@example.com"
+              value="viper9@combatops.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <!-- Password Field with Show/Hide Toggle -->
+        <div class="login-input-group">
+          <div class="login-label-flex">
+            <label for="login-password-field" class="login-card-label">Password</label>
+            <a href="#forgot" class="login-forgot-link" onclick="alert('Password reset link has been dispatched to your email.');">Forgot password?</a>
+          </div>
+          <div class="login-pill-input-wrap">
+            <svg class="login-pill-icon" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input type="password" id="login-password-field" class="login-pill-input" placeholder="••••••••"
+              value="tacticalpass2026" required autocomplete="current-password">
+            <button type="button" class="login-pill-eye" aria-label="Toggle password visibility"
+              onclick="const p = document.getElementById('login-password-field'); p.type = p.type === 'password' ? 'text' : 'password';">
+              <svg viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="login-remember-flex">
+          <label class="login-checkbox-label">
+            <input type="checkbox" checked class="login-checkbox">
+            <span>Remember me for 30 days</span>
+          </label>
+        </div>
+
+        <!-- Sign In Submit Pill Button (Bright Lime / Neon Green) -->
+        <button type="submit" class="login-pill-submit-btn">
+          <span>Sign in</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <!-- Divider -->
+        <div class="login-card-divider">
+          <span>OR CONTINUE WITH</span>
+        </div>
+
+        <!-- Social Buttons Grid (Google & Apple) -->
+        <div class="login-social-grid">
+          <button type="button" class="login-social-pill"
+            onclick="alert('Google SSO Verified! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path fill="#4285F4"
+                d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" />
+              <path fill="#34A853"
+                d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z" />
+              <path fill="#FBBC05"
+                d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
+              <path fill="#EA4335"
+                d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
+            </svg>
+            <span>Google</span>
+          </button>
+
+          <button type="button" class="login-social-pill"
+            onclick="alert('Apple ID Authenticated! Redirecting to Dashboard...'); window.location.href='dashboard.html';">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 1.01-2.85-.92.04-2.03.62-2.68 1.37-.58.66-1.09 1.73-1.04 2.76.99.08 2.03-.53 2.71-1.28z" />
+            </svg>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <!-- Footer Sign Up Link -->
+        <div class="login-card-signup-row">
+          <span>Don't have an account?</span>
+          <a href="book-session.html" class="login-signup-link">Sign up</a>
+        </div>
+
+      </form>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

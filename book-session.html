@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paintball Arena | Book a Combat Session &amp; Slot Reservation</title>
+  <meta name="description"
+    content="Reserve tactical paintball slots by squad size. Live time slot selector, customized weapon tiers, protective gear add-ons, and instant booking confirmation.">
+  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/brand/logo.png">
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       BRANDED PAGE LOADER
+       ========================================================================== -->
+  <div id="page-loader" role="status" aria-live="polite">
+    <div class="loader-brand-wrapper">
+      <div class="loader-pulse-ring"></div>
+      <div class="loader-radar-ring"></div>
+      <img src="assets/images/brand/logo.png" alt="Paintball Arena Tactical Logo" class="loader-logo">
+    </div>
+    <div class="loader-text">
+      <span>Calibrating Booking Dispatch</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FIXED COMPACT HEADER
+       ========================================================================== -->
+  <header id="site-header" role="banner">
+    <div class="header-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="index.html" class="header-brand" aria-label="Paintball Arena Home">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo" class="brand-logo-img">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (Exactly 6 Nav Items, Single Line) -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <!-- 1. Home (Dropdown: Click Only) -->
+        <div class="nav-item">
+          <button type="button" class="nav-link dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Home</span>
+            <svg class="nav-icon" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="index.html" class="dropdown-link" role="menuitem">
+              <span>Home 1 (Tactical HQ)</span>
+              <span class="dropdown-badge">HQ</span>
+            </a>
+            <a href="home-2.html" class="dropdown-link" role="menuitem">
+              <span>Home 2 (Cinematic Warzone)</span>
+              <span class="dropdown-badge">Warzone</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Book Session (Active) -->
+        <div class="nav-item">
+          <a href="book-session.html" class="nav-link active">
+            <span>Book Session</span>
+          </a>
+        </div>
+
+        <!-- 3. Packages & Pricing -->
+        <div class="nav-item">
+          <a href="packages.html" class="nav-link">
+            <span>Packages</span>
+          </a>
+        </div>
+
+        <!-- 4. Group Events -->
+        <div class="nav-item">
+          <a href="events.html" class="nav-link">
+            <span>Group Events</span>
+          </a>
+        </div>
+
+        <!-- 5. Contact -->
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <!-- 6. Dashboard (Next to Contact) -->
+        <div class="nav-item">
+          <a href="dashboard.html" class="nav-link">
+            <span>Dashboard</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Header Utilities (RTL, Dark Mode, Login Button) -->
+      <div class="header-actions">
+        <!-- RTL / LTR Toggle -->
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <svg viewBox="0 0 24 24">
+            <polyline points="8 4 4 8 8 12"></polyline>
+            <polyline points="16 20 20 16 16 12"></polyline>
+            <line x1="4" y1="8" x2="20" y2="8"></line>
+            <line x1="20" y1="16" x2="4" y2="16"></line>
+          </svg>
+          <span class="rtl-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span class="theme-text">Light</span>
+        </button>
+
+        <!-- Login Button (Direct entry to Login Terminal) - hidden on mobile, shown in drawer -->
+        <a href="login.html#login-terminal" class="btn-login btn-login-desktop" aria-label="Player Portal Login">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle Button -->
+        <button type="button" class="mobile-toggle-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE MENU OVERLAY & DRAWER
+       ========================================================================== -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+  <aside class="mobile-menu-drawer" aria-label="Mobile Navigation Drawer">
+    <!-- Mobile Drawer Header -->
+    <div class="mobile-menu-top">
+      <div class="mobile-brand">
+        <img src="assets/images/brand/logo.png" alt="Paintball Arena Logo">
+        <div class="brand-text-block">
+          <span class="brand-name">Paintball Arena</span>
+          <span class="brand-tagline">Combat Ops</span>
+        </div>
+      </div>
+      <button type="button" class="mobile-close-btn" aria-label="Close navigation menu">
+        <svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items with Home Accordion -->
+    <ul class="mobile-nav-list">
+      <!-- 1. Home Accordion (Click only) -->
+      <li>
+        <button type="button" class="mobile-nav-link mobile-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-icon" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="mobile-accordion-content">
+          <a href="index.html" class="mobile-sub-link">
+            <span>Home 1 (Tactical HQ)</span>
+            <span class="dropdown-badge">HQ</span>
+          </a>
+          <a href="home-2.html" class="mobile-sub-link">
+            <span>Home 2 (Cinematic Warzone)</span>
+            <span class="dropdown-badge">Warzone</span>
+          </a>
+        </div>
+      </li>
+
+      <!-- 2. Book Session (Active) -->
+      <li>
+        <a href="book-session.html" class="mobile-nav-link active">
+          <span>Book Session</span>
+        </a>
+      </li>
+
+      <!-- 3. Packages & Pricing -->
+      <li>
+        <a href="packages.html" class="mobile-nav-link">
+          <span>Packages &amp; Pricing</span>
+        </a>
+      </li>
+
+      <!-- 4. Group Events -->
+      <li>
+        <a href="events.html" class="mobile-nav-link">
+          <span>Group &amp; Corporate Events</span>
+        </a>
+      </li>
+
+      <!-- 5. Contact -->
+      <li>
+        <a href="contact.html" class="mobile-nav-link">
+          <span>Contact Operations</span>
+        </a>
+      </li>
+
+      <!-- 6. Dashboard -->
+      <li>
+        <a href="dashboard.html" class="mobile-nav-link">
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Mobile Login Button -->
+    <div class="mobile-login-wrap">
+      <a href="login.html#login-terminal" class="btn-login mobile-login-btn" aria-label="Player Portal Login">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>Login / Player Portal</span>
+      </a>
+    </div>
+
+    <!-- Mobile Bottom Controls -->
+    <div class="mobile-controls">
+      <div class="mobile-toggles-row">
+        <button type="button" class="util-btn rtl-toggle-btn" aria-label="Toggle text direction RTL/LTR">
+          <span class="rtl-text">RTL</span>
+        </button>
+        <button type="button" class="util-btn theme-toggle-btn" aria-label="Toggle dark and light theme">
+          <span class="theme-text">Light</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button id="scroll-to-top" type="button" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       MAIN CONTENT (BOOK SESSION - EXACTLY 5 CONTENT SECTIONS)
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- SECTION 1: HERO & MISSION STEP TRACKER -->
+    <section class="booking-hero-section" aria-labelledby="booking-hero-title">
+      <div class="site-container">
+        <div class="booking-hero-grid">
+
+          <!-- Hero Info -->
+          <div>
+            <span class="section-eyebrow">Real-Time Dispatch Console</span>
+            <h1 id="booking-hero-title"
+              style="font-size: clamp(2.3rem, 4.5vw, 3.8rem); font-weight: 900; text-transform: uppercase; margin-bottom: 1.25rem;">
+              Reserve Your Combat Deployment
+            </h1>
+            <p style="font-size: 1.15rem; line-height: 1.6; color: var(--color-soft-white); max-width: 600px;">
+              Select your squad size, lock in your preferred combat theater, and customize your weapon package with
+              instant booking confirmation.
+            </p>
+
+            <!-- 3-Step Flow Indicator -->
+            <div class="step-tracker-bar">
+              <div class="step-tracker-item active">
+                <div class="step-num">1</div>
+                <div class="step-info">
+                  <span class="step-label">Theater &amp; Time</span>
+                  <span class="step-sub">Select combat slot</span>
+                </div>
+              </div>
+
+              <div class="step-tracker-item">
+                <div class="step-num">2</div>
+                <div class="step-info">
+                  <span class="step-label">Loadout Tier</span>
+                  <span class="step-sub">Weapons &amp; paint</span>
+                </div>
+              </div>
+
+              <div class="step-tracker-item">
+                <div class="step-num">3</div>
+                <div class="step-info">
+                  <span class="step-label">Confirmation</span>
+                  <span class="step-sub">Instant lock-in</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Media -->
+          <div class="tactical-viewport">
+            <img src="assets/images/sections/p14.jpg"
+              alt="Paintball operator preparing weapon loadout before entering combat zone"
+              style="width: 100%; height: 380px; object-fit: cover;">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE CUSTOMIZER & FORM DISPATCH -->
+    <section class="customizer-section" aria-labelledby="customizer-title">
+      <div class="site-container">
+
+        <div class="section-header-row">
+          <div>
+            <span class="section-eyebrow">Interactive Reservation</span>
+            <h2 id="customizer-title" class="section-title">Configure Mission Parameters</h2>
+          </div>
+          <div class="footer-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Live Inventory Connected</span>
+          </div>
+        </div>
+
+        <div class="booking-customizer-grid">
+
+          <!-- Left: Main Form Fields -->
+          <form class="booking-form-main"
+            onsubmit="event.preventDefault(); alert('Session Slot Reserved! Redirecting to Player Dashboard.'); window.location.href='login.html';">
+
+            <!-- Fieldset 1: Choose Arena Zone -->
+            <div class="form-fieldset-card hover-lift">
+              <h3 class="fieldset-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                  <line x1="8" y1="2" x2="8" y2="18"></line>
+                  <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+                <span>Step 1: Choose Battlefield Theater</span>
+              </h3>
+              <div class="theaters-radio-grid">
+                <label class="package-radio-label selected" style="cursor: pointer;">
+                  <input type="radio" name="theater" value="speedball" checked style="display: none;">
+                  <span class="pkg-radio-name">Zone Alpha</span>
+                  <span style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.25rem;">Speedball
+                    Grid</span>
+                </label>
+                <label class="package-radio-label" style="cursor: pointer;">
+                  <input type="radio" name="theater" value="urban" style="display: none;">
+                  <span class="pkg-radio-name">Zone Bravo</span>
+                  <span style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.25rem;">Urban CQB
+                    Ruins</span>
+                </label>
+                <label class="package-radio-label" style="cursor: pointer;">
+                  <input type="radio" name="theater" value="jungle" style="display: none;">
+                  <span class="pkg-radio-name">Zone Charlie</span>
+                  <span style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.25rem;">Jungle
+                    Outpost</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Fieldset 2: Date & Time Slot -->
+            <div class="form-fieldset-card hover-lift">
+              <h3 class="fieldset-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Step 2: Combat Date &amp; Time Slot</span>
+              </h3>
+              <div style="margin-bottom: 1.5rem; max-width: 320px;">
+                <label class="gateway-label" for="booking-calendar-date"
+                  style="display: block; margin-bottom: 0.4rem;">Deployment Date</label>
+                <div class="date-input-wrapper">
+                  <input type="date" id="booking-calendar-date" class="gateway-select" value="2026-09-26">
+                  <svg class="calendar-white-icon" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="slot-picker-grid">
+                <button type="button" class="slot-btn selected" data-time="10:00 AM">
+                  <span class="slot-time">10:00 AM</span>
+                  <span class="slot-availability">6 Slots Left</span>
+                </button>
+                <button type="button" class="slot-btn" data-time="01:30 PM">
+                  <span class="slot-time">01:30 PM</span>
+                  <span class="slot-availability">12 Slots Left</span>
+                </button>
+                <button type="button" class="slot-btn" data-time="04:30 PM">
+                  <span class="slot-time">04:30 PM</span>
+                  <span class="slot-availability">8 Slots Left</span>
+                </button>
+                <button type="button" class="slot-btn" data-time="07:30 PM (Night)">
+                  <span class="slot-time">07:30 PM</span>
+                  <span class="slot-availability" style="color: var(--color-purple);">Night Raid</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fieldset 3: Squad Group Size & Weapon Package -->
+            <div class="form-fieldset-card hover-lift">
+              <h3 class="fieldset-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>Step 3: Squad Size &amp; Weapon Package</span>
+              </h3>
+
+              <div style="margin-bottom: 1.5rem;">
+                <label class="gateway-label" for="book-squad-size" style="display: block; margin-bottom: 0.4rem;">Total
+                  Squad Operators</label>
+                <select id="book-squad-size" class="gateway-select" style="width: 100%; max-width: 320px;">
+                  <option value="6">Fireteam (6 Players)</option>
+                  <option value="10" selected>Squad (10 Players)</option>
+                  <option value="16">Platoon (16 Players)</option>
+                  <option value="24">Company (24 Players)</option>
+                  <option value="40">Battalion (40+ Corporate)</option>
+                </select>
+              </div>
+
+              <div class="package-select-grid">
+                <div class="package-radio-label" data-name="Recon Cadet" data-price="35">
+                  <div>
+                    <span class="pkg-radio-name">Recon Cadet</span>
+                    <p style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.25rem;">Mechanical marker
+                      + 300 rds</p>
+                  </div>
+                  <span class="pkg-radio-price">$35<small
+                      style="font-size: 0.75rem; color: var(--color-soft-white);">/op</small></span>
+                </div>
+
+                <div class="package-radio-label selected" data-name="Assault Vanguard" data-price="59">
+                  <div>
+                    <span class="pkg-radio-name">Assault Vanguard</span>
+                    <p style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.25rem;">Electro-pneumatic
+                      + 750 rds + mask</p>
+                  </div>
+                  <span class="pkg-radio-price">$59<small
+                      style="font-size: 0.75rem; color: var(--color-soft-white);">/op</small></span>
+                </div>
+
+                <div class="package-radio-label" data-name="Spec-Ops Blackout" data-price="89">
+                  <div>
+                    <span class="pkg-radio-name">Spec-Ops Blackout</span>
+                    <p style="font-size: 0.8rem; color: var(--color-soft-white); margin-top: 0.25rem;">Pro electronic +
+                      1,200 rds + full gear</p>
+                  </div>
+                  <span class="pkg-radio-price">$89<small
+                      style="font-size: 0.75rem; color: var(--color-soft-white);">/op</small></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fieldset 4: Tactical Add-ons -->
+            <div class="form-fieldset-card hover-lift">
+              <h3 class="fieldset-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+                <span>Step 4: Tactical Ammunition &amp; Gear Add-Ons</span>
+              </h3>
+
+              <div class="addon-checklist">
+                <label class="addon-checkbox-label">
+                  <div class="addon-left">
+                    <input type="checkbox" class="addon-input" data-price="25">
+                    <div>
+                      <div class="addon-title">+500 Precision Tournament Paintballs</div>
+                      <div class="addon-desc">Extra hopper ammo for heavy suppressing fire</div>
+                    </div>
+                  </div>
+                  <span class="addon-price">+$25</span>
+                </label>
+
+                <label class="addon-checkbox-label">
+                  <div class="addon-left">
+                    <input type="checkbox" class="addon-input" data-price="30">
+                    <div>
+                      <div class="addon-title">Dual Tactical Smoke Canisters (Red &amp; Green)</div>
+                      <div class="addon-desc">Deploy instant 60-second perimeter concealment</div>
+                    </div>
+                  </div>
+                  <span class="addon-price">+$30</span>
+                </label>
+
+                <label class="addon-checkbox-label">
+                  <div class="addon-left">
+                    <input type="checkbox" class="addon-input" data-price="15">
+                    <div>
+                      <div class="addon-title">Pro Anti-Fog Thermal Goggle Upgrade</div>
+                      <div class="addon-desc">Dual spherical thermal pane with zero condensation</div>
+                    </div>
+                  </div>
+                  <span class="addon-price">+$15</span>
+                </label>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn-primary"
+              style="width: 100%; justify-content: center; height: 54px; font-size: 1.1rem;">
+              <span>Confirm Reservation &amp; Dispatch</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+
+          </form>
+
+          <!-- Right: Live Pricing Summary Sidebar -->
+          <div class="booking-summary-sidebar">
+            <div class="summary-sticky-card">
+              <h3 class="summary-title">Reservation Ledger</h3>
+
+              <div class="summary-line-item">
+                <span>Selected Package:</span>
+                <strong id="summary-pkg-name">Assault Vanguard</strong>
+              </div>
+
+              <div class="summary-line-item">
+                <span>Target Slot:</span>
+                <strong id="summary-slot-time">10:00 AM</strong>
+              </div>
+
+              <div class="summary-line-item">
+                <span>Enlisted Roster:</span>
+                <strong id="summary-squad-count">10 Operators</strong>
+              </div>
+
+              <div class="summary-line-item">
+                <span>Add-ons Subtotal:</span>
+                <strong id="summary-addons-total">$0</strong>
+              </div>
+
+              <div class="summary-line-item">
+                <span>Field Safety Marshals:</span>
+                <strong style="color: var(--color-green);">INCLUDED</strong>
+              </div>
+
+              <div class="summary-line-item">
+                <span>HPA Air Refills:</span>
+                <strong style="color: var(--color-green);">UNLIMITED</strong>
+              </div>
+
+              <div class="summary-total-row">
+                <span class="summary-total-label">Total Estimated:</span>
+                <span id="summary-total-amount" class="summary-total-val">$590</span>
+              </div>
+
+              <div
+                style="font-size: 0.8rem; color: var(--color-soft-white); line-height: 1.4; border-top: 1.5px solid #3c3f4e; padding-top: 1rem;">
+                Locks your private spawn base for 3 full hours. No deposit cancellation fee if rescheduled 48h prior.
+              </div>
+
+              <!-- Tactical Guarantees & Perks (Fills right sidebar space) -->
+              <div style="border-top: 1.5px solid #3c3f4e; padding-top: 1.25rem; margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                <div style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--color-soft-white);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-green)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <span>100% All-Weather Combat (Covered Backup)</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--color-soft-white);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-green)" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>Chrono Speed Tested &lt; 280 FPS</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--color-soft-white);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-green)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <span>Instant Confirmation &amp; Squad QR Pass</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--color-soft-white);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-green)" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                  <span>Zero Jam Guarantee (Instant Backup Marker)</span>
+                </div>
+              </div>
+
+              <!-- Dispatch Hotline Strip -->
+              <div style="background: rgba(94, 218, 98, 0.08); border: 1.5px dashed var(--color-green); border-radius: 8px; padding: 0.85rem; text-align: center; margin-top: 1rem;">
+                <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-green); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.2rem;">Live Ops Dispatch Radio</span>
+                <span style="font-size: 0.92rem; font-weight: 800; color: var(--color-white);">+1 (800) 555-WARZONE</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHAT'S INCLUDED IN EVERY TACTICAL SLOT (Tactical Loadout Bento Grid) -->
+    <section class="inclusions-section" aria-labelledby="inclusions-title">
+      <div class="site-container">
+
+        <!-- Centered Header with Radar Badge -->
+        <div class="section-header-row text-center" style="flex-direction: column; align-items: center; text-align: center;">
+          <div class="hero-badge-pill" style="margin-bottom: 1rem;">
+            <span class="pulse-dot"></span>
+            <span>Standard Issue Spec-Ops Kit // 100% Guaranteed Inclusions</span>
+          </div>
+          <h2 id="inclusions-title" class="section-title">Standard Inclusions With Every Slot</h2>
+          <p class="section-subtitle" style="max-width: 620px; margin: 0.5rem auto 0;">
+            Zero rental surcharges. Tournament-grade tactical hardware included free with every reservation.
+          </p>
+        </div>
+
+        <!-- Bento Grid: 2 rows x 3 cols interlocking layout -->
+        <div class="inclusions-bento-grid">
+
+          <!-- Card 1 (Span 2): Regulated Combat Marker -->
+          <div class="bento-card span-2 hover-lift">
+            <img src="assets/images/sections/inclusion-marker.jpg" alt="Regulated Semi-Auto Combat Marker on armory bench" class="bento-bg-img" loading="lazy">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-top-bar">
+              <span class="bento-spec-code">SPEC-01 // ARMORY</span>
+              <span class="bento-free-tag">INCLUDED / $0</span>
+            </div>
+            <div class="bento-content">
+              <div class="bento-title-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <h3 class="bento-title">Regulated Semi-Auto Combat Marker</h3>
+              </div>
+              <div class="bento-chips-row">
+                <span class="bento-chip">.68 Caliber</span>
+                <span class="bento-chip">Micro-Switch Trigger</span>
+                <span class="bento-chip">Chrono &le; 280 FPS</span>
+                <span class="bento-chip">Cleaned &amp; Oiled Daily</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 (Span 1): Thermal Anti-Fog Mask -->
+          <div class="bento-card hover-lift">
+            <img src="assets/images/sections/inclusion-mask.jpg" alt="Thermal Anti-Fog Safety Mask on steel crate" class="bento-bg-img" loading="lazy">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-top-bar">
+              <span class="bento-spec-code">SPEC-02 // OPTICS</span>
+              <span class="bento-free-tag">INCLUDED / $0</span>
+            </div>
+            <div class="bento-content">
+              <div class="bento-title-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <h3 class="bento-title">Anti-Fog Thermal Mask</h3>
+              </div>
+              <div class="bento-chips-row">
+                <span class="bento-chip">ASTM F1776 Certified</span>
+                <span class="bento-chip">Dual-Pane Thermal</span>
+                <span class="bento-chip">260&deg; FOV</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 (Span 1): Unlimited 3,000 PSI Air -->
+          <div class="bento-card hover-lift">
+            <img src="assets/images/sections/inclusion-air.jpg" alt="Unlimited 3,000 PSI Compressed Air Station" class="bento-bg-img" loading="lazy">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-top-bar">
+              <span class="bento-spec-code">SPEC-03 // SUPPLY</span>
+              <span class="bento-free-tag">INCLUDED / $0</span>
+            </div>
+            <div class="bento-content">
+              <div class="bento-title-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <h3 class="bento-title">Unlimited 3,000 PSI Air</h3>
+              </div>
+              <div class="bento-chips-row">
+                <span class="bento-chip">3,000 PSI Pressure</span>
+                <span class="bento-chip">Filtered Nitrogen</span>
+                <span class="bento-chip">Zero Refill Fees</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 (Span 2): Dedicated Safety Marshals -->
+          <div class="bento-card span-2 hover-lift">
+            <img src="assets/images/sections/inclusion-marshal.jpg" alt="Certified Safety Marshals on the battle arena" class="bento-bg-img" loading="lazy">
+            <div class="bento-gradient-overlay"></div>
+            <div class="bento-top-bar">
+              <span class="bento-spec-code">SPEC-04 // COMMAND</span>
+              <span class="bento-free-tag">INCLUDED / $0</span>
+            </div>
+            <div class="bento-content">
+              <div class="bento-title-row">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <h3 class="bento-title">Dedicated Safety Marshals</h3>
+              </div>
+              <div class="bento-chips-row">
+                <span class="bento-chip">1 : 10 Squad Ratio</span>
+                <span class="bento-chip">Active Hit Referee</span>
+                <span class="bento-chip">Game Briefing &amp; Timers</span>
+                <span class="bento-chip">CPR &amp; First-Aid</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: RULES OF ENGAGEMENT & DIGITAL WAIVER PROTOCOL (Tactical Clearance Console) -->
+    <section class="waiver-section" aria-labelledby="waiver-title">
+      <div class="site-container">
+
+        <!-- Centered Header with Directive Badge -->
+        <div class="section-header-row text-center" style="flex-direction: column; align-items: center; text-align: center;">
+          <div class="hero-badge-pill" style="margin-bottom: 1rem;">
+            <span class="pulse-dot"></span>
+            <span>Deployment Directive // Zero-Compromise Safety Standard</span>
+          </div>
+          <h2 id="waiver-title" class="section-title">Rules of Engagement &amp; Digital Clearance</h2>
+          <p class="section-subtitle" style="max-width: 660px; margin: 0.5rem auto 0;">
+            Safety is our absolute operational mandate. Clear these 4 foundational safety rules and submit your electronic waiver to fast-track your arena deployment.
+          </p>
+        </div>
+
+        <!-- Main Clearance Console: 2 Columns (Directives 2x2 Grid + Fast-Track Pass Kiosk) -->
+        <div class="clearance-console-grid">
+
+          <!-- Column 1: 2x2 Tactical Directives Matrix -->
+          <div class="directives-matrix">
+            <div class="directives-header-strip">
+              <span class="directives-strip-title">MANDATORY RULES OF ENGAGEMENT</span>
+              <span class="directives-strip-badge">STRICT ENFORCEMENT</span>
+            </div>
+
+            <div class="directives-cards-grid">
+              <!-- Directive 01 -->
+              <div class="directive-card hover-lift">
+                <div class="directive-card-top">
+                  <div class="directive-code-wrap">
+                    <span class="directive-code">ROE-01</span>
+                    <span class="directive-badge red">MANDATORY</span>
+                  </div>
+                  <div class="directive-icon">
+                    <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  </div>
+                </div>
+                <h4 class="directive-title">Masks Locked On Field</h4>
+                <p class="directive-desc">Never lift or loosen goggles inside netting or combat sectors for any reason. Immediate ejection upon breach.</p>
+              </div>
+
+              <!-- Directive 02 -->
+              <div class="directive-card hover-lift">
+                <div class="directive-card-top">
+                  <div class="directive-code-wrap">
+                    <span class="directive-code">ROE-02</span>
+                    <span class="directive-badge yellow">STAGING SAFE</span>
+                  </div>
+                  <div class="directive-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  </div>
+                </div>
+                <h4 class="directive-title">Barrel Socks In Safe Zone</h4>
+                <p class="directive-desc">Safety catches engaged and high-visibility barrel blocking socks secured at all times outside active battle zones.</p>
+              </div>
+
+              <!-- Directive 03 -->
+              <div class="directive-card hover-lift">
+                <div class="directive-card-top">
+                  <div class="directive-code-wrap">
+                    <span class="directive-code">ROE-03</span>
+                    <span class="directive-badge green">RADAR CHRONO</span>
+                  </div>
+                  <div class="directive-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                </div>
+                <h4 class="directive-title">280 FPS Velocity Ceiling</h4>
+                <p class="directive-desc">Every marker is clocked through the radar chronograph. Over-velocity hardware will not be cleared for play.</p>
+              </div>
+
+              <!-- Directive 04 -->
+              <div class="directive-card hover-lift">
+                <div class="directive-card-top">
+                  <div class="directive-code-wrap">
+                    <span class="directive-code">ROE-04</span>
+                    <span class="directive-badge purple">COMBAT HONOR</span>
+                  </div>
+                  <div class="directive-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                </div>
+                <h4 class="directive-title">10-Foot Surrender Rule</h4>
+                <p class="directive-desc">Within 10 feet of an unsuspecting opponent, offer the verbal "Surrender" command to prevent point-blank hits.</p>
+              </div>
+            </div>
+
+            <!-- Compliance Banner Footer -->
+            <div class="compliance-footer-bar">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <span>Safety Briefing is held 15 mins prior to every match drop by certified field marshals.</span>
+            </div>
+          </div>
+
+          <!-- Column 2: High-Tech Fast-Track Clearance Pass Kiosk Card -->
+          <div class="waiver-kiosk-card hover-lift">
+            <div class="kiosk-image-header">
+              <img src="assets/images/sections/safety-waiver.jpg" alt="Tactical electronic safety waiver tablet kiosk with QR arena pass" class="kiosk-hero-img" loading="lazy">
+              <div class="kiosk-live-tag">
+                <span class="pulse-dot"></span>
+                <span>ELECTRONIC WAIVER KIOSK // 24/7 ONLINE</span>
+              </div>
+            </div>
+
+            <div class="kiosk-card-body">
+              <div class="kiosk-title-group">
+                <span class="section-eyebrow" style="color: var(--color-green);">Fast-Track Counter Bypass</span>
+                <h3 class="kiosk-heading">Digital Safety Clearance Pass</h3>
+                <p class="kiosk-desc">
+                  Save 20 minutes at the arena registration desk. Sign digitally on your phone before arrival for instant priority check-in.
+                </p>
+              </div>
+
+              <!-- 3 Quick Fast-Track Benefits List with Icons -->
+              <div class="kiosk-perks-list">
+                <div class="kiosk-perk-item">
+                  <div class="kiosk-perk-check">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="kiosk-perk-text">
+                    <strong>Zero Queue Waiting:</strong> Walk directly to Armory Staging.
+                  </div>
+                </div>
+                <div class="kiosk-perk-item">
+                  <div class="kiosk-perk-check">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="kiosk-perk-text">
+                    <strong>Instant QR Arena Pass:</strong> Stored on Apple Wallet &amp; Google Pay.
+                  </div>
+                </div>
+                <div class="kiosk-perk-item">
+                  <div class="kiosk-perk-check">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="kiosk-perk-text">
+                    <strong>Valid For 12 Months:</strong> 1-time signature covers entire combat season.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action CTA -->
+              <div class="kiosk-action-wrap">
+                <a href="#" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.95rem 1.5rem;"
+                  onclick="alert('Digital Waiver Form loaded! Complete your online safety clearance.'); return false;">
+                  <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; margin-right: 0.5rem; fill: none; stroke: currentColor; stroke-width: 2.2;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                  <span>Sign Digital Waiver Online</span>
+                </a>
+                <span class="kiosk-security-note">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  256-Bit SSL Encrypted &bull; Minors require parent/guardian digital signature
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: ARENA BOOKING & WEATHER FAQ -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="site-container">
+
+        <div class="section-header-row"
+          style="text-align: center; justify-content: center; flex-direction: column; align-items: center;">
+          <span class="section-eyebrow">Tactical Intelligence</span>
+          <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+          <p style="font-size: 1.1rem; color: var(--color-soft-white); max-width: 600px; margin-top: 0.5rem;">
+            Everything you need to know about deposits, cancellations, bad weather, and age requirements.
+          </p>
+        </div>
+
+        <div class="faq-accordion-wrap">
+
+          <div class="faq-item open">
+            <button type="button" class="faq-question-btn">
+              <span>What is the minimum age requirement to play?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              The minimum age for regular .68 caliber tactical paintball is 10 years old. Operators aged 10-17 must have
+              a digital waiver signed by a parent or legal guardian prior to field entry.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>What happens if it rains on our reserved session date?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              We play rain or shine! In fact, light rain creates intense, atmospheric combat. If extreme weather occurs,
+              you can transfer your session to our covered all-weather AstroTurf Speedball stadium or reschedule free of
+              charge.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>Can we bring our own paintballs or outside equipment?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Paintball Arena is strictly Field Paint Only (FPO) to ensure biodegradable, non-toxic, and non-staining
+              quality. You are welcome to bring your own personal markers and masks, provided they pass our 280 FPS
+              chronograph and ASTM safety inspection.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question-btn">
+              <span>What is your cancellation and rescheduling policy?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Bookings can be rescheduled at no extra charge up to 48 hours before your session time. Cancellations made
+              at least 72 hours in advance receive a 100% full refund to the original payment method.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SHARED FOOTER
+       ========================================================================== -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand & Status -->
+        <div class="footer-brand-col">
+          <div class="footer-logo-row">
+            <img src="assets/images/brand/logo.png" alt="Paintball Arena Official Logo" class="footer-logo-img">
+            <div>
+              <div class="footer-brand-title">Paintball Arena</div>
+              <div class="footer-brand-subtitle">Combat Ops</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Premier tactical combat arena featuring multi-terrain battlegrounds, electronic hit-scoring, competitive
+            speedball grids, and military-grade rental gear.
+          </p>
+          <div class="footer-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Arena Status: OPEN / Live Matches</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Arena Navigation -->
+        <div>
+          <div class="footer-title">Combat Grid</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Tactical HQ (Home 1)</a></li>
+            <li><a href="home-2.html">Warzone (Home 2)</a></li>
+            <li><a href="index.html#zones">Arena Battlefield Zones</a></li>
+            <li><a href="packages.html">Armory &amp; Paint Packages</a></li>
+            <li><a href="events.html">Corporate &amp; Squad Battles</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Player Services -->
+        <div>
+          <div class="footer-title">Player Services</div>
+          <ul class="footer-links-list">
+            <li><a href="book-session.html">Slot Reservations</a></li>
+            <li><a href="login.html">Player Dashboard Login</a></li>
+            <li><a href="#rules">Rules of Engagement</a></li>
+            <li><a href="#waiver">Digital Safety Waiver</a></li>
+            <li><a href="contact.html">Dispatch &amp; Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Operations & Dispatch HQ -->
+        <div>
+          <div class="footer-title">Operations HQ</div>
+          <ul class="footer-info-list">
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Sector 7 Tactical Grounds, 452 Combat Way, Metro Arena District</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Mon - Sun: 08:00 AM - 11:00 PM (Night Ops)</span>
+            </li>
+            <li class="footer-info-item">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>+1 (800) 555-PAINT (7246)</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 Paintball Arena Inc. All tactical rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Safety Terms</a>
+          <a href="#">Waiver Verification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
