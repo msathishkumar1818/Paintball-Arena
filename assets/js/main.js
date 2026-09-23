@@ -149,6 +149,12 @@
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
       if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+      // Ensure accordion is closed by default whenever menu opens
+      if (accordionContent) accordionContent.classList.remove('open');
+      if (accordionTrigger) {
+        accordionTrigger.classList.remove('active');
+        accordionTrigger.setAttribute('aria-expanded', 'false');
+      }
     }
 
     function closeMenu() {
@@ -156,7 +162,7 @@
       overlay.classList.remove('open');
       document.body.style.overflow = '';
       if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
-      // Reset accordion to collapsed when menu closes
+      // Always collapse accordion on close
       if (accordionContent) accordionContent.classList.remove('open');
       if (accordionTrigger) {
         accordionTrigger.classList.remove('active');
@@ -168,8 +174,12 @@
     if (closeBtn) closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
 
-    // Mobile Home Accordion (CLICK ONLY)
+    // Mobile Home Accordion (CLICK ONLY - strictly closed by default, opens only on click)
     if (accordionTrigger && accordionContent) {
+      accordionContent.classList.remove('open');
+      accordionTrigger.classList.remove('active');
+      accordionTrigger.setAttribute('aria-expanded', 'false');
+
       accordionTrigger.addEventListener('click', (e) => {
         e.preventDefault();
         const isOpen = accordionContent.classList.contains('open');
@@ -185,6 +195,13 @@
         closeMenu();
       });
     });
+
+    // Auto-close mobile menu if user resizes window to desktop view
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1280) {
+        closeMenu();
+      }
+    }, { passive: true });
   }
 
   // --- 6. SCROLL TO TOP ---
@@ -369,6 +386,15 @@
             card.style.display = 'none';
           }
         });
+      });
+    });
+
+    // Package Tier Filter Pills
+    const filterPills = document.querySelectorAll('.filter-pill');
+    filterPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach((p) => p.classList.remove('active'));
+        pill.classList.add('active');
       });
     });
   }
@@ -589,6 +615,113 @@
     }, { passive: true });
   }
 
+  // --- 13. TACTICAL CUSTOM SELECTS (100% Full Width & Green Accent) ---
+  function initCustomSelects() {
+    const selects = document.querySelectorAll('select.rfq-input');
+    if (!selects.length) return;
+
+    selects.forEach((select) => {
+      if (select.dataset.customized === 'true') return;
+      select.dataset.customized = 'true';
+
+      // Hide original select from view
+      select.style.display = 'none';
+
+      // Create wrapper
+      const wrapper = document.createElement('div');
+      wrapper.className = 'custom-select-wrapper';
+
+      // Create trigger button
+      const trigger = document.createElement('div');
+      trigger.className = 'custom-select-trigger';
+      trigger.setAttribute('tabindex', '0');
+      trigger.setAttribute('role', 'combobox');
+      trigger.setAttribute('aria-expanded', 'false');
+
+      const textSpan = document.createElement('span');
+      textSpan.className = 'custom-select-text';
+      const selectedOption = select.options[select.selectedIndex] || select.options[0];
+      textSpan.textContent = selectedOption ? selectedOption.textContent : '';
+
+      const arrow = document.createElement('div');
+      arrow.innerHTML = `<svg class="custom-select-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+
+      trigger.appendChild(textSpan);
+      trigger.appendChild(arrow.firstElementChild);
+
+      // Create options menu (100% full width, dark theme, green active highlight)
+      const menu = document.createElement('div');
+      menu.className = 'custom-select-menu';
+      menu.setAttribute('role', 'listbox');
+
+      Array.from(select.options).forEach((opt, idx) => {
+        const optionEl = document.createElement('div');
+        optionEl.className = 'custom-select-option' + (idx === select.selectedIndex ? ' selected' : '');
+        optionEl.dataset.value = opt.value;
+        optionEl.textContent = opt.textContent;
+
+        optionEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          select.value = opt.value;
+          textSpan.textContent = opt.textContent;
+
+          menu.querySelectorAll('.custom-select-option').forEach((o) => o.classList.remove('selected'));
+          optionEl.classList.add('selected');
+
+          wrapper.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+
+        menu.appendChild(optionEl);
+      });
+
+      // Toggle dropdown on click
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = wrapper.classList.contains('open');
+        document.querySelectorAll('.custom-select-wrapper.open').forEach((w) => {
+          if (w !== wrapper) {
+            w.classList.remove('open');
+            const trig = w.querySelector('.custom-select-trigger');
+            if (trig) trig.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrapper.classList.toggle('open', !isOpen);
+        trigger.setAttribute('aria-expanded', !isOpen);
+      });
+
+      // Keyboard navigation
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
+        } else if (e.key === 'Escape') {
+          wrapper.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Insert wrapper into DOM
+      select.parentNode.insertBefore(wrapper, select);
+      wrapper.appendChild(trigger);
+      wrapper.appendChild(menu);
+      wrapper.appendChild(select);
+    });
+
+    // Close all custom selects on click outside
+    document.addEventListener('click', (e) => {
+      document.querySelectorAll('.custom-select-wrapper.open').forEach((w) => {
+        if (!w.contains(e.target)) {
+          w.classList.remove('open');
+          const trig = w.querySelector('.custom-select-trigger');
+          if (trig) trig.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
   // --- INITIALIZATION ---
   document.addEventListener('DOMContentLoaded', () => {
     initLoader();
@@ -601,6 +734,7 @@
     initBookingCalculator();
     initFAQAccordion();
     initArmoryModStation();
+    initCustomSelects();
     initDashboardControls();
     initDashboardScrollSpy();
   });

@@ -14,6 +14,15 @@
   .desktop-nav {
     gap: 1.75rem;
   }
+
+  /* Completely hide mobile drawer and overlay on desktop screens */
+  .mobile-menu-drawer,
+  .mobile-menu-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
 
 /* Tablet & Mobile Devices (<= 1279px - iPad Pro, Tablets & Mobile) */
@@ -445,6 +454,17 @@
   .experience-debrief-card {
     padding: 1.5rem 1.25rem;
   }
+
+  .tier-badge {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.85rem;
+    letter-spacing: 0.06em;
+    top: -12px;
+  }
+
+  .matrix-tier-card {
+    padding: 2.25rem 1.35rem 1.75rem;
+  }
 }
 
 /* Book Session Tablet & Mobile Adaptations */
@@ -866,10 +886,24 @@
     grid-template-columns: 1fr;
   }
 
+  .telemetry-table-scroll {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .telemetry-table-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
   .telemetry-row {
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
     padding: 1.25rem 1rem;
+    box-sizing: border-box;
   }
 
   .telemetry-row.head {
@@ -883,6 +917,29 @@
 
   .hud-stats-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .telemetry-row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    padding: 1rem 0.85rem;
+  }
+
+  .hud-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-actions-row {
+    flex-direction: column;
+  }
+
+  .booking-actions-row .btn-primary,
+  .booking-actions-row .btn-secondary,
+  .booking-actions-row .util-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
