@@ -833,6 +833,19 @@ html.dark #site-footer {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.footer-logo-row:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+.footer-logo-row:hover .footer-logo-img {
+  box-shadow: 0 0 15px rgba(94, 218, 98, 0.4);
 }
 
 .footer-logo-img {
