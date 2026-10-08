@@ -12,7 +12,7 @@
 /* Large Desktops & High-Res Screens (1280px - 1440px+) */
 @media (min-width: 1280px) {
   .desktop-nav {
-    gap: 1.75rem;
+    gap: 1.05rem;
   }
 
   /* Completely hide mobile drawer and overlay on desktop screens */
@@ -48,15 +48,29 @@
   .header-actions .util-btn,
   .header-actions .rtl-toggle-btn,
   .header-actions .theme-toggle-btn,
-  .header-actions .btn-login-desktop {
+  .header-actions .btn-login-desktop,
+  .header-actions .btn-booking-desktop {
     display: none !important;
   }
 
-  /* Mobile drawer Login button styling */
+  /* Mobile drawer Login & Booking button styling */
   .mobile-login-wrap {
     padding: 0.75rem 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
     margin-top: 0.25rem;
+  }
+
+  .mobile-booking-btn {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 0.7rem 1.25rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 0.6rem;
   }
 
   .mobile-login-btn {
@@ -69,6 +83,18 @@
     padding: 0.7rem 1.25rem;
     border-radius: 8px;
     box-sizing: border-box;
+  }
+
+  .footer-newsletter-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .footer-newsletter-form {
+    max-width: 100%;
+    width: 100%;
   }
 
   .footer-grid {
@@ -177,6 +203,19 @@
 
   html[dir="rtl"] #scroll-to-top {
     left: 16px;
+  }
+
+  .footer-newsletter-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-submit-btn {
+    width: 100%;
   }
 }
 
@@ -1769,8 +1808,10 @@
   }
 
   .format-perk-line {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.75rem;
+    font-size: 0.88rem;
+    padding: 0.25rem 0;
+    background: transparent;
+    border: none;
   }
 
   .rfq-section {
@@ -1852,9 +1893,11 @@
   }
 
   .format-perk-line {
-    font-size: 0.8rem;
-    padding: 0.45rem 0.65rem;
+    font-size: 0.82rem;
+    padding: 0.2rem 0;
     gap: 0.5rem;
+    background: transparent;
+    border: none;
   }
 
   .format-perk-line svg {
