@@ -124,8 +124,101 @@
 
   .brand-tagline {
     font-size: 0.65rem;
+}
+
+/* Tablet Devices (iPad Mini, iPad, Surface, Tablets: 601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer-container {
+    padding: 0 1.5rem;
   }
 
+  .footer-newsletter-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.75rem 2rem;
+    gap: 1.25rem;
+  }
+
+  .footer-newsletter-content {
+    max-width: 100%;
+  }
+
+  .footer-newsletter-title {
+    font-size: 1.35rem;
+  }
+
+  .footer-newsletter-desc {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .footer-newsletter-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.75rem;
+  }
+
+  .footer-email-input-wrap {
+    flex: 1;
+  }
+
+  .footer-submit-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand-col {
+    max-width: 100%;
+  }
+
+  .footer-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .footer-info-item {
+    font-size: 0.88rem;
+    gap: 0.65rem;
+  }
+
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .copyright-text {
+    font-size: 0.85rem;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: nowrap;
+  }
+
+  .footer-legal-links a {
+    font-size: 0.825rem;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile Screens (<= 600px - Small Viewports & Mobile Phones) */
+@media (max-width: 600px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2.25rem;
